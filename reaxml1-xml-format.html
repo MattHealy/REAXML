@@ -1,0 +1,5298 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- $Header: /web/src/reaxml/1/web/reaxml1-xml-format.html,v 1.118 2009/03/27 02:41:48 jheumann Exp $ -->
+<title>REAXML XML Format</title>
+<link rel="stylesheet" type="text/css" href="/docs/techdoc.css" /></head>
+<body>
+<h1>REAXML XML Format</h1>
+
+<h2 id="toc">Table of Contents</h2>
+
+<ol>
+<li><a href="#intro">Introduction</a>
+</li><li><a href="#elements">XML Elements</a>
+</li><li><a href="#types">Common Data Types</a>
+</li><li><a href="#errors">XML Parser Errors</a>
+</li><li><a href="#changes">Change History</a>
+</li></ol>
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+This document should be read in conjunction with the REAXML propertyList.DTD, available
+at <a href="http://reaxml.realestate.com.au/propertyList.dtd">http://reaxml.realestate.com.au/propertyList.dtd</a>.  The XML data structure is described by the DTD.  This document describes the purpose
+of each element/attribute, as well as further validation rules for the information stored
+in the data.</p>
+
+<h2 id="elements">XML Elements</h2>
+<table>
+<tbody><tr>
+<td valign="top">
+<ul>
+<li><a href="#address">address</a></li><li><a href="#allowances">allowances</a>
+</li><li><a href="#agentID">agentID</a>
+</li><li><a href="#airConditioning">airConditioning</a>
+</li><li><a href="#alarmSystem">alarmSystem</a>
+</li><li><a href="#annualRainfall">annualRainfall</a>
+</li><li><a href="#area">area</a>
+</li><li><a href="#auction">auction</a>
+</li><li><a href="#authority">authority</a>
+</li><li><a href="#availabilityLink">availabilityLink</a>
+</li><li><a href="#balcony">balcony</a>
+</li><li><a href="#bathrooms">bathrooms</a>
+</li><li><a href="#bedrooms">bedrooms</a>
+</li><li><a href="#bond">bond</a>
+</li><li><a href="#broadband">broadband</a>
+</li><li><a href="#buildingDetails">buildingDetails</a>
+</li><li><a href="#builtInRobes">builtInRobes</a>
+</li><li><a href="#business">business</a>
+</li><li><a href="#businessCategory">businessCategory</a>
+</li><li><a href="#businessLease">businessLease</a>
+</li><li><a href="#businessSubCategory">businessSubCategory</a>
+</li><li><a href="#carSpaces">carSpaces</a>
+</li><li><a href="#carports">carports</a>
+</li><li><a href="#carryingCapacity">carryingCapacity</a>
+</li><li><a href="#category">category</a>
+</li><li><a href="#commercial">commercial</a>
+</li><li><a href="#commercialAuthority">commercialAuthority</a>
+</li><li><a href="#commercialCategory">commercialCategory</a>
+</li><li><a href="#commercialListingType">commercialListingType</a>
+</li><li><a href="#commercialRent">commercialRent</a>
+</li><li><a href="#councilRates">councilRates</a>
+</li><li><a href="#country">country</a>
+</li><li><a href="#courtyard">courtyard</a>
+</li><li><a href="#crossOver">crossOver</a>
+</li><li><a href="#currentLeaseEndDate">currentLeaseEndDate</a>
+</li><li><a href="#date">date</a>
+</li><li><a href="#dateAvailable">dateAvailable</a>
+</li><li><a href="#deck">deck</a>
+</li><li><a href="#depth">depth</a>
+</li><li><a href="#description">description</a>
+</li><li><a href="#dishwasher">dishwasher</a>
+</li><li><a href="#document">document</a></li></ul>
+</td>
+
+<td valign="top">
+<ul>
+  <li><a href="#ductedCooling">ductedCooling</a> </li>
+  <li><a href="#ductedHeating">ductedHeating</a> </li>
+  <li><a href="#subscriber">duration</a> </li>
+  <li><a href="#ecoFriendly">ecoFriendly</a></li>
+  <li><a href="#email">email</a> </li>
+  <li><a href="#energyRating">energyRating</a> </li>
+  <li><a href="#ensuite">ensuite</a> </li>
+  <li><a href="#estate">estate</a> </li>
+  <li><a href="#evaporativeCooling">evaporativeCooling</a> </li>
+  <li><a href="#exclusivity">exclusivity</a> </li>
+  <li><a href="#externalLink">externalLink</a> </li>
+  <li><a href="#extraFields">extraFields</a> </li>
+  <li><a href="#features">features</a> </li>
+  <li><a href="#fencing">fencing</a></li>
+  <li><a href="#floorboards">floorboards</a></li>
+<li><a href="#floorplan">floorplan</a></li><li><a href="#franchise">franchise</a>
+</li><li><a href="#frontage">frontage</a>
+</li><li><a href="#fullyFenced">fullyFenced</a>
+</li><li><a href="#furnished">furnished</a>
+</li><li><a href="#furtherOptions">furtherOptions</a>
+</li><li><a href="#garages">garages</a>
+</li><li><a href="#gasHeating">gasHeating</a>
+</li><li><a href="#greyWaterSystem">greyWaterSystem</a>
+</li><li><a href="#gym">gym</a>
+</li><li><a href="#headline">headline</a>
+</li><li><a href="#heating">heating</a>
+</li><li><a href="#holidayCategory">holidayCategory</a>
+</li><li><a href="#holidayRental">holidayRental</a>
+</li><li><a href="#hotWaterService">hotWaterService</a>
+</li><li><a href="#hydronicHeating">hydronicHeating</a>
+</li><li><a href="#idealFor">idealFor</a>
+</li><li><a href="#img">images</a>
+</li><li><a href="#img">img</a>
+</li><li><a href="#improvements">improvements</a>
+</li><li><a href="#insideSpa">insideSpa</a>
+</li><li><a href="#inspection">inspection</a>
+</li><li><a href="#inspectionTimes">inspectionTimes</a>
+</li><li><a href="#intercom">intercom</a>
+</li><li><a href="#irrigation">irrigation</a>
+</li><li><a href="#isHomeLandPackage">isHomeLandPackage</a>
+</li><li><a href="#isMultiple">isMultiple</a></li>
+<li><a href="#land">land</a></li>
+</ul>
+<p>&nbsp;</p></td>
+
+<td valign="top"><ul><li><a href="#landCategory">landCategory</a> </li>
+  <li><a href="#landDetails">landDetails</a> </li>
+  <li><a href="#listingAgent">listingAgent</a> </li>
+  <li><a href="#livingAreas">livingAreas</a> </li>
+  <li><a href="#lotNumber">lotNumber</a></li>
+  <li><a href="#max">max</a> </li>
+  <li><a href="#subscriber">marketing</a> </li>
+  <li><a href="#min">min</a> </li>
+  <li><a href="#miniweb">miniweb</a> </li>
+  <li><a href="#municipality">municipality</a> </li>
+  <li><a href="#name">name</a> </li>
+  <li><a href="#objects">objects</a> </li>
+  <li><a href="#openFirePlace">openFirePlace</a> </li>
+  <li><a href="#openSpaces">openSpaces</a> </li>
+  <li><a href="#otherFeatures">otherFeatures</a> </li>
+  <li><a href="#outdoorEnt">outdoorEnt</a> </li>
+  <li><a href="#outgoings">outgoings</a> </li>
+  <li><a href="#outsideSpa">outsideSpa</a> </li>
+  <li><a href="#page">page</a> </li>
+  <li><a href="#parkingComments">parkingComments</a> </li>
+  <li><a href="#password">password</a> </li>
+  <li><a href="#payTV">payTV</a> </li>
+  <li><a href="#petFriendly">petFriendly</a> </li>
+  <li><a href="#postcode">postcode</a> </li>
+  <li><a href="#pool">pool</a> </li>
+  <li><a href="#poolInGround">poolInGround</a> </li>
+  <li><a href="#poolAboveGround">poolAboveGround</a> </li>
+  <li><a href="#price">price</a></li>
+<li><a href="#priceView">priceView</a></li><li><a href="#propertyExtent">propertyExtent</a>
+</li><li><a href="#purchaseOrder">purchaseOrder</a>
+</li><li><a href="#range">range</a>
+</li><li><a href="#reference">reference</a>
+</li><li><a href="#region">region</a>
+</li><li><a href="#remoteGarage">remoteGarage</a>
+</li><li><a href="#rent">rent</a>
+</li><li><a href="#rentPerSquareMetre">rentPerSquareMetre</a>
+</li><li><a href="#rental">rental</a>
+</li><li><a href="#residential">residential</a>
+</li><li><a href="#return">return</a>
+</li><li><a href="#reverseCycleAirCon">reverseCycleAirCon</a></li></ul>
+</td>
+
+<td valign="top"><ul>
+  <li><a href="#rumpusRoom">rumpusRoom</a> </li>
+  <li><a href="#rural">rural</a> </li>
+  <li><a href="#ruralCategory">ruralCategory</a> </li>
+  <li><a href="#ruralFeatures">ruralFeatures</a> </li>
+  <li><a href="#secureParking">secureParking</a> </li>
+  <li><a href="#services">services</a> </li>
+  <li><a href="#shed">shed</a> </li>
+  <li><a href="#site">site</a> </li>
+  <li><a href="#smokers">smokers</a> </li>
+  <li><a href="#soilTypes">soilTypes</a> </li>
+  <li><a href="#solarHotWater">solarHotWater</a> </li>
+  <li><a href="#solarPanels">solarPanels</a> </li>
+  <li><a href="#soldDate">soldDate</a> </li>
+  <li><a href="#soldDetails">soldDetails</a> </li>
+  <li><a href="#soldPrice">soldPrice</a></li>
+  <li><a href="#spa">spa</a> </li>
+    <li><a href="#splitSystemAirCon">splitSystemAirCon</a> </li>
+<li><a href="#splitSystemHeating">splitSystemHeating</a> </li>
+<li><a href="#stage">stage</a> </li>
+<li><a href="#state">state</a> </li>
+<li><a href="#street">street</a> </li>
+<li><a href="#streetDirectory">streetDirectory</a> </li>
+<li><a href="#streetNumber">streetNumber</a> </li>
+<li><a href="#study">study</a> </li>
+<li><a href="#subNumber">subNumber</a> </li>
+<li><a href="#subscriber">style</a> </li>
+<li><a href="#suburb">suburb</a> </li>
+<li><a href="#takings">takings</a> </li>
+<li><a href="#tax">tax</a> </li>
+<li><a href="#telephone">telephone</a> </li>
+<li><a href="#tenancy">tenancy</a> </li>
+<li><a href="#tennisCourt">tennisCourt</a> </li>
+<li><a href="#terms">terms</a> </li>
+<li><a href="#toilets">toilets</a> </li>
+<li><a href="#underOffer">underOffer</a> </li>
+<li><a href="#uniqueID">uniqueID</a> </li>
+<li><a href="#subscriber">upgrade</a> </li>
+<li><a href="#username">username</a> </li>
+<li><a href="#vacuumSystem">vacuumSystem</a> </li>
+<li><a href="#vendorDetails">vendorDetails</a> </li>
+<li><a href="#videoLink">videoLink</a> </li>
+<li><a href="#views">views</a> </li>
+<li><a href="#waterTank">waterTank</a> </li>
+<li><a href="#workshop">workshop</a> </li>
+<li><a href="#zone">zone</a></li>
+</ul>
+</td>
+
+</tr></tbody></table>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="address">address</h3>
+
+<p>
+Indicates the physical address of the property or business
+</p>
+
+<h4>Validation</h4>
+<p>
+
+The address is considered valid if all of its enclosing elements
+are valid; and that the <a href="#suburb">suburb</a> belongs to
+the <a href="#postcode">postcode</a> and <a href="#state">state</a>,
+depending on <a href="#country">country</a>.
+</p>
+<p>
+Additionally the <em>display</em> attribute may be used to hide some address details and show the Suburb and State only. The <em>streetview</em> if set to <em>yes</em> will enable streetview on the site for this property however the default for street view will be set to <em>no</em> if display = no. By default both these attributes if not supplied will set the status to <em>yes</em>.
+</p>
+<p>
+It is an invalid address if the <em>display</em> attribute is <kbd>yes</kbd>,
+and an address is both not provided in the same XML, and has never been provided
+in the past.
+</p>
+<p>
+<b>Please Note: </b> New Zealand property listings may omit <a href="#postcode">postcode</a>, but not <a href="#region">region</a>. If the <a href="#postcode">postcode</a> is omitted, we will automatically try and associate the
+correct <a href="#postcode">postcode</a>, however guessing will occur in the instance of duplicated suburb names in the same <a href="#region">region</a>.
+</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#subNumber">subNumber</a>,
+<a href="#lotNumber">lotNumber</a>,
+<a href="#site">site</a>,
+<a href="#streetNumber">streetNumber</a>,
+<a href="#street">street</a>,
+<a href="#suburb">suburb</a>,
+<a href="#state">state</a>,
+<a href="#region">region</a>,
+<a href="#postcode">postcode</a>,
+<a href="#country">country</a>.
+</p>
+
+</p><div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="allowances">allowances</h3>
+
+<p>
+Indicates common restrictions which may limit successful property tenancy applications.
+</p>
+
+<h4>Validation</h4>
+<p>
+    The allowance element is available for Residential Rental property only and limited
+    to set child elements, petFriendly, furnished and smokers.
+    Child elements can be yes/no and true/false.
+</p>
+
+<h4>See Also</h4>
+
+<p>
+    <a href="#petFriendly">petFriendly</a>, <a href="#furnished">furnished</a>, <a href="#smokers">smokers</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="agentID">agentID</h3>
+
+<p>
+A 6 character identity code assigned by REA of the real estate agent providing the property data.</p>
+<p>Also used to identify a conjunctional listingAgent
+</p>
+
+<h4>Validation</h4>
+<p>
+Six alphabetic characters long.  If provided in mixed or lower case, the
+agentID will be internally converted to uppercase.  The agentID must also
+be known to REA and be for an active subscribed agent.
+</p>
+
+<h4>Valid Examples</h4>
+<p>
+(Assuming the agent ID is active and known to REA.)
+</p>
+<ul>
+<li><code>&lt;agentID&gt;ABCDEF&lt;/agentID&gt;</code>
+</li><li><code>&lt;agentID&gt;abcdef&lt;/agentID&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;agentID&gt;ABC&lt;/agentID&gt;</code></li><li><code>&lt;agentID&gt;ABC123&lt;/agentID&gt;</code>
+</li><li><code>&lt;agentID&gt;ABC 12&lt;/agentID&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="airConditioning">airConditioning</h3>
+<p>
+Specifies if the listed property has air conditioning or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no air conditioning present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;airConditioning&gt;0&lt;/airConditioning&gt;</code>
+</li><li><code>&lt;airConditioning&gt;1&lt;/airConditioning&gt;</code>
+</li><li><code>&lt;airConditioning&gt;no&lt;/airConditioning&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;airConditioning&gt;-1&lt;/airConditioning&gt;</code>
+</li><li><code>&lt;airConditioning&gt;3.5&lt;/airConditioning&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="alarmSystem">alarmSystem</h3>
+<p>
+Specifies if the listed property has an alarm system or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no alarm system present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;alarmSystem&gt;&lt;/alarmSystem&gt;</code>
+</li><li><code>&lt;alarmSystem&gt;0&lt;/alarmSystem&gt;</code>
+</li><li><code>&lt;alarmSystem&gt;1&lt;/alarmSystem&gt;</code>
+</li><li><code>&lt;alarmSystem&gt;no&lt;/alarmSystem&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;alarmSystem&gt;-1&lt;/alarmSystem&gt;</code>
+</li><li><code>&lt;alarmSystem&gt;3.5&lt;/alarmSystem&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="annualRainfall">annualRainfall</h3>
+<p>
+Descriptive text defining the  annual rain fall for a rural property.</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;annualRainfall&gt;250 mm per annum&lt;/annualRainfall&gt;</code>
+</li><li><code>&lt;annualRainfall&gt;18 inches&lt;/annualRainfall&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ruralFeatures">ruralFeatures</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="area">area</h3>
+<p>
+Represents a measurement of area being offered for sale / lease.  The
+<em>unit</em> attribute must be given, and must have a value as defined
+in the DTD.
+</p>
+<p>
+If the <kbd>of</kbd> attribute is omitted, then it is assumed to be
+<em>total</em>, meaning total area.
+</p>
+
+<h4>Validation</h4>
+<p>
+The <em>area</em> value must be a number greater than zero, with or without
+a decimal portion.
+</p>
+<p>
+It is a mandatory requirement for commercial listings to specify a valid floor
+area.  Where a <a href="#commercial">commercial</a> listing has separate areas
+of function, using the <em>of</em> attribute, these can be as
+<em>warehouse</em>, <em>office</em> or one of the <em>otherArea</em> values.
+</p>
+<p>
+<em>otherArea</em> must be one of <kbd>'other', 'industrial', 'hard stand', 'showroom'</kbd> or <kbd>'retail'</kbd>.
+</p>
+<p>
+Where no function has been specified, the <em>area</em> is assumed to be total area.
+</p>
+<p>
+The <em>unit</em> attribute must be given, and must have a value as
+<a href="http://reaxml.realestate.com.au/propertyList.dtd">defined
+in the DTD</a>.
+</p>
+<p>
+<b>Please note:</b> The <em>of</em> attribute is only used on <a href="#commercial">commercial</a> listings and must be contained under the <a href="#buildingDetails">buildingDetails</a> element.
+</p>
+
+<p>
+Only <a href="#commercial">commercial</a> listings with an <a href="#isMultiple">isMultiple</a>
+value of <kbd>'yes'</kbd> can specify an <em>area</em> <em>range</em> for when
+dealing with <a href="#buildingDetails">buildingDetails</a> with an
+<em>area</em> "<kbd>of</kbd>" attribute equal to <kbd>total</kbd>.
+
+<kbd>of=""</kbd> .  This indicates the
+smallest to largest floor spaces available in the one listing and must be done
+using the <a href="#range">range</a> element.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li>&lt;area unit="acre"&gt;2.5&lt;/area&gt;</li>
+<li>&lt;area unit="squareMeter"&gt;750&lt;/area&gt;</li>
+<li>&lt;area unit="acre"&gt;&lt;/area&gt;</li>
+<li>&lt;area unit="square"&gt;23&lt;/area&gt; &lt;!-- total --&gt;</li>
+<li>&lt;area of="warehouse" unit="square"&gt;11&lt;/area&gt;<br />
+    &lt;area of="hard stand" unit="square"&gt;12&lt;/area&gt;</li>
+<li>&lt;area unit="squareMeter"&gt;<br />
+&lt;range&gt;<br />
+&lt;min&gt;880&lt;/min&gt;<br />
+&lt;max&gt;990&lt;/max&gt;<br />
+&lt;/area&gt;</li>
+</ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li>&lt;area&gt;2.5 acres&lt;/area&gt;
+</li><li>&lt;area unit="Square Metres"&gt;690&lt;/area&gt;
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#buildingDetails">buildingDetails</a>,
+<a href="#landDetails">landDetails</a>.
+<a href="#range">range</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="auction">auction</h3>
+<p>
+If the property is up for auction an auction date should be specified.
+</p>
+
+<h4>Validation</h4>
+<p>
+<em>Auction</em> details will be processed but are only available/visible where
+the <a href="#authority"><em>authority</em></a> is set as <kbd>auction</kbd>.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;auction date="2003-12-04T18:30" /&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;auction date="13/12/03 1pm" /&gt;</code>
+</li></ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="authority">authority</h3>
+<p>
+The method of sale used by the listing agents for this property.
+</p>
+
+<table>
+<thead>
+<tr><th><em>value</em></th><th>description</th></tr>
+</thead>
+<tbody><tr><td><kbd>auction</kbd></td><td>The property is offered for sale via auction at a particular date and time.</td></tr>
+<tr><td><kbd>exclusive</kbd></td><td>The property is "For Sale"</td></tr>
+<tr><td><kbd>multilist</kbd></td><td>The property is "For Sale" and listed with multiple agents</td></tr>
+<tr><td><kbd>conjunctional</kbd></td><td>The property is "For Sale" and listed with multiple agents working together - sales commission is shared amongst agents</td></tr>
+<tr><td><kbd>open</kbd></td><td>More than one real estate agent may be
+employed to sell the property. The owner pays a commission only to the
+agent who finds the buyer</td></tr>
+<tr><td><kbd>sale</kbd></td><td>Most common sale type - The property is offered for sale by negotiation.</td></tr>
+<tr><td><kbd>setsale</kbd></td><td>The property is offered for sale up to the set sale date.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>value</em> attribute of the <em>authority</em> element must have
+a value equal to one of the values given in the above table.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;authority value="auction" /&gt;</code>
+</li><li><code>&lt;authority value="sale" /&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;authority value="lottery" /&gt;</code></li><li><code>&lt;authority value="private tender" /&gt;</code></li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="availabilityLink">availabilityLink</h3>
+<p>
+Holiday rental properties may have links to an external URI source of
+availability - generally in the form of an online calendar.
+</p><p>
+Rental holidays are limited to one <em>availabilityLink</em> URL only.
+</p>
+
+<h4>Validation</h4>
+<p>
+The <em>href</em> attribute of <em>availabilityLink</em> must be a valid
+availability calendar and must refer to an accessible resource. This is not to
+be used as a link to agent sites or any sites other than legitimate
+Availability calendars or availability information.
+</p><p>
+eg. <code>&lt;availabilityLink href="http://www.realestate.com.au/holidayavailability/property123cal.html"/&gt;</code>
+</p><p>
+To remove existing availabilityLink URL include the <em>availabilityLink</em>
+element, leaving the href empty.
+</p><p>
+eg. <code>&lt;availabilityLink href=""/&gt;</code>
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="balcony">balcony</h3>
+
+<p>
+    Indicates whether the property has a balcony.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="bathrooms">bathrooms</h3>
+<p>
+The number of bathrooms in the property for sale.  Ensuites should be included in the bathrooms value, however are tracked separately, see the <a href="#ensuite">ensuite element</a>.
+</p>
+<h4>Validation</h4>
+
+<p>All new Residential and Rental properties must have a bathroom
+value. It will be incorrect to supply an empty element or the value 0.</p>
+<p>New Rural listings may have a bathroom value of 0. This should only
+be if there is no residence on the property.</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;bathrooms&gt;4&lt;/bathrooms&gt;</code>
+</li><li><code>&lt;bathrooms&gt;16&lt;/bathrooms&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;bathrooms&gt;&lt;/bathrooms&gt;</code>
+</li><li><code>&lt;bathrooms&gt;0&lt;/bathrooms&gt;</code>
+</li><li><code>&lt;bathrooms&gt;no&lt;/bathrooms&gt;</code>
+</li><li><code>&lt;bathrooms&gt;-1&lt;/bathrooms&gt;</code>
+</li><li><code>&lt;bathrooms&gt;3.5&lt;/bathrooms&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>,
+<a href="#ensuite">ensuite</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="bedrooms">bedrooms</h3>
+<p>
+The number of bedrooms in the property for sale.
+</p>
+<h4>Validation</h4>
+<p>
+All new Residential and Rental properties must have a bedroom value. It
+will be incorrect to supply empty elements or 0. If the listing is a <em>Studio</em> with no bedrooms then the text Studio can be supplied for the element.</p>
+<p>New Rural listings may have a bedroom value of 0. This should only
+be if there is no residence on the property.</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;bedrooms&gt;Studio&lt;/bedrooms&gt;</code>
+</li><li><code>&lt;bedrooms&gt;4&lt;/bedrooms&gt;</code>
+</li><li><code>&lt;bedrooms&gt;16&lt;/bedrooms&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;bedrooms&gt;&lt;/bedrooms&gt;</code>
+</li><li><code>&lt;bedrooms&gt;0&lt;/bedrooms&gt;</code>
+</li><li><code>&lt;bedrooms&gt;-1&lt;/bedrooms&gt;</code>
+</li><li><code>&lt;bedrooms&gt;3.5&lt;/bedrooms&gt;</code>
+</li><li><code>&lt;bedrooms&gt;1 single, 3 double&lt;/bedrooms&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="bond">bond</h3>
+<p>
+The amount of bond required for a tenancy property.
+</p>
+
+<h4>Validation</h4>
+<p>
+The bond value is validated the same as the <a href="#price"><em>price</em> element</a>.
+</p>
+
+<!--  Broadband  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="broadband">broadband</h3>
+<p>
+Specifies if the listed property has Broadband Internet Available or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Broadband Internet Available present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;broadband&gt;0&lt;/broadband&gt;</code>
+</li><li><code>&lt;broadband&gt;1&lt;/broadband&gt;</code>
+</li><li><code>&lt;broadband&gt;no&lt;/broadband&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;broadband&gt;-1&lt;/broadband&gt;</code>
+</li><li><code>&lt;broadband&gt;3.5&lt;/broadband&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="buildingDetails">buildingDetails</h3>
+
+<p>
+This element contains information about the physical structure of the
+building for sale or rent. Area is displayed as Floor Area.
+</p>
+
+<h4>Validation</h4>
+<p>
+There are no special requirements for the <em>buildingDetails</em> element
+to be valid, except for all sub elements to be valid.
+</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#area">area</a>,
+<a href="#energyRating">energyRating</a>,
+</p>
+
+<!--  Built-in Wardrobes  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="builtInRobes">builtInRobes</h3>
+<p>
+Specifies if the listed property has Built-in Wardrobes or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Built-in Wardrobes present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;builtInRobes&gt;0&lt;/builtInRobes&gt;</code>
+</li><li><code>&lt;builtInRobes&gt;1&lt;/builtInRobes&gt;</code>
+</li><li><code>&lt;builtInRobes&gt;no&lt;/builtInRobes&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;builtInRobes&gt;-1&lt;/builtInRobes&gt;</code>
+</li><li><code>&lt;builtInRobes&gt;3.5&lt;/builtInRobes&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="business">business</h3>
+<p>
+An established business for sale.
+</p>
+
+<table>
+<thead>
+<tr><th width="106"><em>status</em></th><th width="357">Description</th></tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>offmarket</td><td>This property is not currently on the market.</td></tr>
+<tr><td>sold</td><td>The property has been sold.</td></tr>
+<tr><td>leased</td><td>The property has been leased or rented.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows the same validation rules as
+the <a href="#date"><em>date</em> element</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="businessCategory">businessCategory</h3>
+<p>
+A classification of the type of <a href="#business">business</a> listing.
+</p>
+<p>
+<a href="#business">business</a> listings can have up to 3 different <em>businessCategory</em> values.
+</p>
+<h4>Validation</h4>
+<p>New business listings must have a valid <em>businessCategory</em> value and be one of a defined list of values.
+</p>
+<p>See:
+<a href="http://reaxml.realestate.com.au/docs/BusinessCategories.txt">Available <em>businessCategory</em> and <em>businessSubCategory</em> values</a>
+</p>
+<p>
+A maximum of 3 <em>businessCategory</em> values can be selected.  For each business
+category, the <a href="#name">name</a> element is required and the <em>id</em> attribute refers to the
+sequence of the <em>businessCategory</em> and ranges from <kbd>1 - 3</kbd>.
+</p>
+<p>
+<em>id</em> <kbd>1</kbd> refers to main <em>businessCategory</em>.
+</p>
+<p>Listings uploaded without an id attribute can only modify the main <em>businessCategory</em>.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li>&lt;businessCategory id=&quot;1&quot;&gt;<br />
+&nbsp;&nbsp;&lt;name&gt;Beauty/Health&lt;/name&gt;<br />
+&nbsp;&nbsp;&lt;businessSubCategory&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Beauty products&lt;/name&gt;<br />
+&nbsp;&nbsp;&lt;/businessSubCategory&gt;<br />
+&lt;/businessCategory&gt;<br />
+&lt;businessCategory id=&quot;2&quot;&gt;<br />
+&nbsp;&nbsp;&lt;name&gt;Retail&lt;/name&gt;<br />
+&nbsp;&nbsp;&lt;businessSubCategory&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Health/Beauty&lt;/name&gt;<br />
+&nbsp;&nbsp;&lt;/businessSubCategory&gt;<br />
+&lt;/businessCategory&gt;</li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="businessLease">businessLease</h3>
+<p>
+The cost to the business for its lease over a specified time period.
+</p>
+
+<h4>Validation</h4>
+<p>
+The businessLease value is validated the same as for the <a href="#price"><em>price</em> element</a>.
+</p>
+<p>The <em>period</em> attribute must have a value as enumerated in the
+<a href="http://reaxml.realestate.com.au/propertyList.dtd">DTD</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="businessSubCategory">businessSubCategory</h3>
+<p>
+Each <a href="#businessCategory">businessCategory</a> can have an associated <em>businessSubCategory</em> for more refined searching
+</p>
+<p>See:
+<a href="http://reaxml.realestate.com.au/docs/BusinessCategories.txt">Available <em>businessCategory</em> and <em>businessSubCategory</em> values</a>
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="carSpaces">carSpaces</h3>
+<p>
+Lists how many car parking spots there are available at this commercial
+property or business.
+</p>
+
+<h4>Validation</h4>
+<p>
+The value must be a positive whole number, without any fractional component.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;carSpaces&gt;0&lt;/carSpaces&gt;</code>
+</li><li><code>&lt;carSpaces&gt;500&lt;/carSpaces&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;carSpaces&gt;-1&lt;/carSpaces&gt;</code>
+</li><li><code>&lt;carSpaces&gt;one&lt;/carSpaces&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="carports">carports</h3>
+<p>
+For the property listing, the number of car spaces under carports.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted as one carport, while <kbd>no</kbd> or <kbd>false</kbd> are counted as none.
+An empty value is considered as there being no carport present
+within the property.</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;carports&gt;&lt;/carports&gt;</code>
+</li><li><code>&lt;carports&gt;0&lt;/carports&gt;</code>
+</li><li><code>&lt;carports&gt;1&lt;/carports&gt;</code>
+</li><li><code>&lt;carports&gt;2&lt;/carports&gt;</code>
+</li><li><code>&lt;carports&gt;no&lt;/carports&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;carports&gt;-1&lt;/carports&gt;</code>
+</li><li><code>&lt;carports&gt;3.5&lt;/carports&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#garages">garages</a>
+<a href="#openSpaces">openSpaces</a>
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="carryingCapacity">carryingCapacity</h3>
+<p>
+Describes the stock carrying capacity of the rural property.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;carryingCapacity&gt;&lt;/carryingCapacity&gt;</code>
+</li><li><code>&lt;carryingCapacity&gt;50 Breeders&lt;/carryingCapacity&gt;</code>
+</li><li><code>&lt;carryingCapacity&gt;400 Deer or 100 head of breeding Cattle&lt;/carryingCapacity&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ruralFeatures">ruralFeatures</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="category">category</h3>
+<p>
+Declares the type of property this is.
+</p>
+
+<table>
+<thead>
+<tr><th><em>Name</em></th><th></th></tr>
+</thead>
+<tbody><tr><td><kbd>House</kbd></td><td></td></tr>
+<tr><td><kbd>Unit</kbd></td><td></td></tr>
+<tr><td><kbd>Townhouse</kbd></td><td></td></tr>
+<tr><td><kbd>Villa</kbd></td><td></td></tr>
+<tr><td><kbd>Apartment</kbd></td><td></td></tr>
+<tr><td><kbd>Flat</kbd></td><td></td></tr>
+<tr><td><kbd>Studio</kbd></td><td></td></tr>
+<tr><td><kbd>Warehouse</kbd></td><td></td></tr>
+<tr><td><kbd>DuplexSemi-detached</kbd></td><td></td></tr>
+<tr><td><kbd>Alpine</kbd></td><td></td></tr>
+<tr><td><kbd>AcreageSemi-rural</kbd></td><td></td></tr>
+<tr><td><kbd>BlockOfUnits</kbd></td><td></td></tr>
+<tr><td><kbd>Terrace</kbd></td><td></td></tr>
+<tr><td><kbd>Retirement</kbd></td><td></td></tr>
+<tr><td><kbd>ServicedApartment</kbd></td><td></td></tr>
+<tr><td><kbd>Other</kbd></td><td></td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+For a new property listing (residental, rental), there must be a
+<em>category</em> element.
+</p>
+<p>
+The <em>name</em> attribute of the <em>category</em> element must have
+a value equal to one of the values given in the above table.
+</p>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;category name="Residential" /&gt;</code>
+</li><li><code>&lt;category name="Commercial" /&gt;</code></li>
+<li><code>&lt;category name="Rural" /&gt;</code>
+    (see also <em>ruralCategory definitions</em>).
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="commercial">commercial</h3>
+<p>
+A commercial property for sale.
+</p>
+
+<table>
+<thead>
+<tr><th width="89"><em>status</em></th><th width="374">Description</th></tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>offmarket</td><td>This property is not currently on the market.</td></tr>
+<tr><td>sold</td><td>The property has been sold.</td></tr>
+<tr><td>leased</td><td>The property has been leased or rented.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows the same validation rules as
+the <a href="#date"><em>date</em> element</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="commercialAuthority">commercialAuthority</h3>
+<p>
+The method of sale used by the listing agent for this property.
+</p>
+
+<table>
+<thead>
+<tr><th width="77"><em>Value</em></th>
+<th width="217">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>auction</td>
+<td>Sale by auction</td>
+</tr>
+<tr><td>eoi</td><td>Sale by Expression of Interest.</td></tr>
+<tr><td>forsale</td><td>For Sale</td></tr>
+<tr><td>offers</td><td>Offers to Purchase.</td></tr>
+<tr><td>sale</td><td>Sale by Negotiation.</td></tr>
+<tr><td>tender</td><td>Sale by public tender by a particular date.</td></tr>
+</tbody></table>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="commercialCategory">commercialCategory</h3>
+<p>
+A classification of the type of <a href="#commercial">commercial</a> property.
+</p>
+<p>
+<a href="#commercial">commercial</a> properties can have up to 3 different <em>commercialCategory</em> values.
+The <em>id</em> attribute refers to the sequence of the <em>commercialCategory</em> and ranges from <kbd>1 - 3</kbd>.
+</p>
+<p><em>id</em> <kbd>1</kbd> refers to main <em>commercialCategory</em>.
+</p>
+<h4>Validation</h4>
+<p>
+For a new commercial property listing, there must be a <em>commercialCategory</em>.  It is an error for a <a href="#commercial">commercial</a> listing to omit a valid <em>commercialCategory</em> value.</p>
+<p>
+A maximum of 3 commercialCategory values can be selected.  Listings uploaded without an <em>id</em> attribute can only modify the main <em>commercialCategory</em>
+</p>
+<p>
+The <em>name</em> attribute of the <em>commercialCategory</em> element must have a value as listed in the below table.
+</p>
+
+<table>
+<thead>
+<tr><th><em>Value</em></th></tr>
+</thead>
+<tbody>
+<tr><td>Commercial Farming</td></tr>
+<tr><td>Land/Development</td></tr>
+<tr><td>Hotel/Leisure</td></tr>
+<tr><td>Industrial/Warehouse</td></tr>
+<tr><td>Medical/Consulting</td></tr>
+<tr><td>Offices</td></tr>
+<tr><td>Retail</td></tr>
+<tr><td>Showrooms/Bulky Goods</td></tr>
+</tbody></table>
+<p>&nbsp;</p>
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="commercialListingType">commercialListingType</h3>
+
+<p>
+Declares the type of the listing - if the property is for sale, or lease.
+</p>
+<p>
+A commercialListingType must be included for all <em>new</em> Commercial Properties. It will be incorrect for <em>new</em> Commercial listings not to have this element.</p>
+
+<p>Note
+that Business listings are always processed as a <kbd>sale</kbd>; it is incorrect to use <kbd>lease</kbd> or <kbd>both</kbd>.</p>
+
+<h4>Validation</h4>
+<p>
+The <em>value</em> attribute must have one of <kbd>sale</kbd>, <kbd>lease</kbd>,
+or <kbd>both</kbd>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="commercialRent">commercialRent</h3>
+<p>
+For commercial properties, this element specifies the annual rent.
+The rent may be specificed as either a single figure, or as a rental <a href="#range">range</a>
+per square metre only (valid only if the 'isMultiple' attribute is set to yes), or both.
+<br />
+<br />
+<b>Note:</b> If isMultiple is set to 'no' or omitted then omitting a single valid figure for commercialRent will result in an invalid listing.
+</p>
+
+<h4>Validation</h4>
+<ul>
+<li>The rent value is validated the same as for the <a href="#price"><em>price</em> element</a>.
+</li><li>The <em>plusOutgoings</em> attribute must be either <kbd>yes</kbd> or <kbd>no</kbd>.
+</li></ul>
+
+<h4>Valid Examples</h4>
+
+<ul>
+<li>
+&lt;commercialRent period="annual" tax="inclusive"&gt;<br />
+&lt;rentPerSquareMetre&gt;<br />
+&lt;range&gt;<br />
+&lt;min&gt;88&lt;/min&gt;<br />
+&lt;max&gt;99&lt;/max&gt;<br />
+&lt;/range&gt;<br />
+&lt;/rentPerSquareMetre&gt;<br />
+&lt;/commercialRent&gt;
+</li>
+<li>
+&lt;commercialRent period="annual" tax="inclusive"&gt;<br />
+80000  &lt;!-- a fixed value, or a range ... --&gt;<br />
+&lt;rentPerSquareMetre&gt;<br />
+&lt;range&gt;<br />
+&lt;min&gt;88&lt;/min&gt;<br />
+&lt;max&gt;99&lt;/max&gt;<br />
+&lt;/range&gt;<br />
+&lt;/rentPerSquareMetre&gt;<br />
+&lt;/commercialRent&gt;
+</li>
+</ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#price">price</a>, <a href="#rentPerSquareMetre">rentPerSquareMetre</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="councilRates">councilRates</h3>
+<p>
+Describes any annual council rates.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;councilRates&gt;&lt;/councilRates&gt;</code>
+</li><li><code>&lt;councilRates&gt;$1,200 per annum&lt;/councilRates&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="country">country</h3>
+<p>
+The country where the listing is located.</p>
+
+<h4>Validation</h4>
+<p>
+The country may be expressed as a string of alphabetic characters and punctuation
+as long as the country name matches the formal english name listed in
+<a href="http://ftp.ics.uci.edu/pub/ietf/http/related/iso3166.txt">ISO 3166</a>.
+Alternatively, the three-character or two-character ISO 3166 country code may
+be used.
+</p>
+<p>
+Note, the value of <em>country</em> also affects the validation of
+<a href="#state"><em>state</em></a>, <a href="#postcode"><em>postcode</em></a>
+and <a href="#suburb"><em>suburb</em></a>.
+If the <em>country</em> element is omitted or missing, the country is assumed to
+be <strong>Australia</strong>.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;country&gt;AUSTRALIA&lt;/country&gt;</code>
+</li><li><code>&lt;country&gt;AUS&lt;/country&gt;</code>
+</li><li><code>&lt;country&gt;NZ&lt;/country&gt;</code>
+</li><li><code>&lt;country&gt;IDN&lt;/country&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;country&gt;AUST.&lt;/country&gt;</code>
+</li><li><code>&lt;country&gt;AUST&lt;/country&gt;</code>
+</li><li><code>&lt;country&gt;U.S.A.&lt;/country&gt;</code>
+</li><li><code>&lt;country&gt;UK&lt;/country&gt;</code>  (perhaps you mean <code>GB</code>?)
+</li><li><code>&lt;country&gt;OZ&lt;/country&gt;</code>
+</li></ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#address">address</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="courtyard">courtyard</h3>
+
+<p>
+    Indicates whether the property has a courtyard.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="crossOver">crossOver</h3>
+<p>
+A cross over is the part of the driveway outside of the property boundary between
+the boundary and the road provided by the local council.  This element is used to
+indicate if a cross over is present on a vacant block of land.
+</p>
+<h4>Validation</h4>
+<p>
+The <em>value</em> attribute must have one of <kbd>left</kbd>, <kbd>right</kbd>
+or <kbd>center</kbd>.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;crossOver value="left" /&gt;</code>
+</li><li><code>&lt;crossOver value="right" /&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;crossOver /&gt;</code>
+</li><li><code>&lt;crossOver value="none" /&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="currentLeaseEndDate">currentLeaseEndDate</h3>
+<p>
+The date any current lease on the property terminates.
+</p>
+
+<h4>Validation</h4>
+<p>
+The <em>currentLeaseEndDate</em> element follows the same validation rules as
+the <a href="#date"><em>date</em> element</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="date">date</h3>
+
+<p>
+A date value, with optional time.  Please see the description of
+<a href="#datetime">Date and Time data</a> for a full description of what
+date and time formats are accepted, including examples.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="dateAvailable">dateAvailable</h3>
+<p>
+The date the property is available for occupation.
+</p>
+
+<h4>Validation</h4>
+<p>
+For new rental property listings, there must be a <em>dateAvailable</em>
+value.  However, holiday rental listings may omit this value.
+</p>
+<p>
+This element follows the <a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<h4>Invalid Examples</h4>
+
+<ul>
+<li><code>&lt;dateAvailable&gt;Now&lt;/dateAvailable&gt;</code>
+</li></ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#holidayCategory">holidayCategory</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="deck">deck</h3>
+
+<p>
+    Indicates whether the property has a deck.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="depth">depth</h3>
+<p>
+Represents a particular measurement of depth for the property.
+</p>
+<table>
+<thead>
+<tr><th width="70"><em>side</em></th>
+<th width="628">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>left</td><td>The left side of the property from the perspective of
+someone standing on the street frontage and facing inwards.</td></tr>
+<tr><td>right</td><td>The opposite side of the property from the left side.</td></tr>
+<tr><td>rear</td>
+<td>The rear side of the property from the street frontage.</td>
+</tr>
+</tbody></table>
+<h4>Validation</h4>
+<p>
+The <em>frontage</em> value must be a number greater than zero, with or without
+a decimal portion.
+</p>
+<h5>Valid Examples</h5>
+<ul>
+  <li>&lt;depth side="left"&gt;25&lt;/depth&gt;</li>
+  <li>&lt;depth unit="meter" side="rear"&gt;40&lt;/depth&gt;</li>
+</ul>
+<h5>Invalid Examples</h5>
+<ul>
+  <li>&lt;depth&gt;20 metres&lt;/depth&gt;</li>
+  <li>&lt;depth&gt;18&lt;/depth&gt;</li>
+  <li>&lt;depth side=""&gt;99 meters&lt;/depth&gt;</li>
+  <li>&lt;depth side="topleft"&gt;-123 meters&lt;/depth&gt;</li>
+</ul>
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="description">description</h3>
+<p>
+The description of the property, able to include multiple paragraphs of text. This field is for plain text only. Our parser will remove any HTML tags submitted within this field.
+</p>
+
+<h4>Validation</h4>
+<p>
+Any amount of viewable text up to 65535 characters long is accepted
+as valid.
+</p>
+
+<!--  Dishwasher  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="dishwasher">dishwasher</h3>
+<p>
+Specifies if the listed property has a Dishwasher or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Dishwasher present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;dishwasher&gt;0&lt;/dishwasher&gt;</code>
+</li><li><code>&lt;dishwasher&gt;1&lt;/dishwasher&gt;</code>
+</li><li><code>&lt;dishwasher&gt;no&lt;/dishwasher&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;dishwasher&gt;-1&lt;/dishwasher&gt;</code>
+</li><li><code>&lt;dishwasher&gt;3.5&lt;/dishwasher&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="document">document</h3>
+
+<p>The <em>document</em> element is used to refer to a single PDF file.
+The <em>file</em> attribute may refer to an image file included in the zip file bundle
+that the XML file came in or a <em>url</em> attribute referring to an external URL where
+the <em>document</em> can be downloaded from.
+</p>
+<p>Up to 10 PDF files can be attached to the listing.  The <em>id</em> attribute refers to the sequence of the <em>document</em> and ranges from <kbd>1 -10</kbd>.
+</p>
+<p>If you wish to delete a <em>document</em>, then you only need to provide the <em>id</em> attribute. For example, to delete the second document:
+<br />
+<br />
+&lt;objects&gt;   <br />
+&nbsp;&lt;document id="2" /&gt; <br />
+&lt;objects&gt;
+</p>
+<h4>Validation</h4>
+<p>If a <em>document</em> is provided, then either the <em>file</em> attribute must point to a file within the zip bundle; or the <em>url</em> attribute points to an accessible file.
+If <em>document</em> data is provided, it MUST be a valid PDF format. Other document formats are not acceptable.
+</p>
+<p>
+The <em>title</em> attribute refers to the title of the documents as displayed on the site.  An example could be 'Listing Authority'.
+</p><p>
+The <em>id</em> attribute must be in the range <kbd>1</kbd> through <kbd>10</kbd>.
+</p>
+<p>
+The <em>modTime</em> attribute, if it exists, must follow the <a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<h5>Valid Examples</h5>
+<ul>
+<li>&lt;objects&gt;<br />
+&nbsp;&lt;document id="1" modTime="2007-01-01-12:00:00" title="Authority" file="section32.pdf" format="pdf"/&gt;
+&lt;/objects&gt;</li>
+<li>&lt;objects&gt;<br />
+&nbsp;&lt;document id="1" modTime="2007-01-01-12:00:00" url="http://agencyX.com.au/title.pdf" format="pdf"/&gt;
+&lt;/objects&gt;</li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="ecoFriendly">ecoFriendly</h3>
+
+<p>
+    Indicates common eco friendly housing attributes.
+</p>
+
+<h4>Validation</h4>
+<p>
+    The ecoFriendly element is limited to set child elements, solarPanels, solarHotWater, waterTank, greyWaterSystem. Child elements can be yes/no and true/false.
+</p>
+
+<h4>See Also</h4>
+
+<p>
+    <a href="#solarPanels">solarPanels</a>, <a href="#solarHotWater">solarHotWater</a>, <a href="#waterTank">waterTank</a>, <a href="#greyWaterSystem">greyWaterSystem</a>
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="email">email</h3>
+<p>
+Represents a single email address.
+</p>
+
+<h4>Validation</h4>
+<p>
+A valid email address consists of up to 60 characters.
+</p>
+
+<!--  Ducted Cooling  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="ductedCooling">ductedCooling</h3>
+<p>
+Specifies if the listed property has Ducted Cooling or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Ducted Cooling present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;ductedCooling&gt;0&lt;/ductedCooling&gt;</code>
+</li><li><code>&lt;ductedCooling&gt;1&lt;/ductedCooling&gt;</code>
+</li><li><code>&lt;ductedCooling&gt;no&lt;/ductedCooling&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;ductedCooling&gt;-1&lt;/ductedCooling&gt;</code>
+</li><li><code>&lt;ductedCooling&gt;3.5&lt;/ductedCooling&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<!--  Ducted Heating  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="ductedHeating">ductedHeating</h3>
+<p>
+Specifies if the listed property has Ducted Heating or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Ducted Heating present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;ductedHeating&gt;0&lt;/ductedHeating&gt;</code>
+</li><li><code>&lt;ductedHeating&gt;1&lt;/ductedHeating&gt;</code>
+</li><li><code>&lt;ductedHeating&gt;no&lt;/ductedHeating&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;ductedHeating&gt;-1&lt;/ductedHeating&gt;</code>
+</li><li><code>&lt;ductedHeating&gt;3.5&lt;/ductedHeating&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="energyRating">energyRating</h3>
+<p>
+Indicates the energy efficiency rating of the property.
+</p>
+<h4>Validation</h4>
+<p>
+The value must be between 0.0 and 10.0 using 0.5 increments. This field is
+mandatory for Residential homes for sale and New homes for sale in the
+Australian Capital Territory and optional for other states.
+</p>
+<h4>See Also</h4>
+<p>
+<a href="#buildingDetails">buildingDetails</a>.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;energyRating&gt;4.5&lt;/energyRating&gt;</code>
+</li><li><code>&lt;energyRating /&gt;</code> <em>(for residential sale properties
+    outside of ACT)</em>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+  <li><code>&lt;energyRating&gt;6 stars&lt;/energyRating&gt;</code></li>
+  <li><code>&lt;energyRating&gt;4.2&lt;/energyRating&gt;</code></li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="ensuite">ensuite</h3>
+<p>
+The number of ensuites in the property for sale.  Ensuites should be included in the bathrooms value also, however are tracked separately,
+see the <a href="#bathrooms">bathrooms</a>.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted as one ensuite, while <kbd>no</kbd> or <kbd>false</kbd> are counted as none.
+An empty element is considered to be no ensuite present within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;ensuite&gt;&lt;/ensuite&gt;</code>
+</li><li><code>&lt;ensuite&gt;0&lt;/ensuite&gt;</code>
+</li><li><code>&lt;ensuite&gt;1&lt;/ensuite&gt;</code>
+</li><li><code>&lt;ensuite&gt;13&lt;/ensuite&gt;</code>
+</li><li><code>&lt;ensuite&gt;yes&lt;/ensuite&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;ensuite&gt;-1&lt;/ensuite&gt;</code>
+</li><li><code>&lt;ensuite&gt;3.5&lt;/ensuite&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>,
+<a href="#bathrooms">bathrooms</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="estate">estate</h3>
+<p>
+Describes any housing estate development that this block of land belongs
+to.
+</p>
+
+<!--  Evaporative Cooling  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="evaporativeCooling">evaporativeCooling</h3>
+<p>
+Specifies if the listed property has Evaporative Cooling or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Evaporative Cooling present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;evaporativeCooling&gt;0&lt;/evaporativeCooling&gt;</code>
+</li><li><code>&lt;evaporativeCooling&gt;1&lt;/evaporativeCooling&gt;</code>
+</li><li><code>&lt;evaporativeCooling&gt;no&lt;/evaporativeCooling&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;evaporativeCooling&gt;-1&lt;/evaporativeCooling&gt;</code>
+</li><li><code>&lt;evaporativeCooling&gt;3.5&lt;/evaporativeCooling&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="exclusivity">exclusivity</h3>
+<p>
+The right acquired by the Agent to be the sole marketer of the property for sale.
+If exclusivity is "open" then the property is defined as "Open/General".
+The value must be one of "open" or "exclusive".
+If no value is supplied REA will default the value to "open"
+</p>
+
+<table>
+<thead>
+<tr><th width="89"><em>Value</em></th>
+<th width="243">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>exclusive</td><td>The property is listed exclusively by this agent.</td></tr>
+<tr><td>open</td><td>The property can be listed by multiple agents.</td></tr>
+</tbody></table>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="externalLink">externalLink</h3>
+<p>
+Properties may have links to other material such as 360 degree views
+or virtual tours.
+</p>
+<p>
+Residential listings can have 2 <em>externalLink</em> elements.  <a href="#commercial">commercial</a> and <a href="#business">business</a> listings can have 3 <em>externalLink</em> elements.
+
+</p><h4>Validation</h4>
+<p>
+The <em>href</em> attribute of <em>externalLink</em> must be a valid <i>Online Tour</i>
+URL, and
+must refer to an accessible resource. This is not to be used as a link
+to agent sites or any sites other than legitimate Online Tours.
+</p>
+
+<!-- TODO: fix up these examples -->
+<p><code> eg. &lt;externalLink href="http://www.realestate.com.au/onlinetours/VictoriaSt.tour"/&gt;</code></p>
+<p>
+To remove existing externalLinks, include the externalLink element, leaving the <em>href</em> empty.
+</p>
+<p><code> eg. &lt;externalLink href=""/&gt;</code></p><div class="linkback"><a href="#elements">..back</a></div>
+
+<div class="linkback"></div>
+<h3 id="extraFields">extraFields</h3>
+
+<p>
+<em>extraFields</em> are only to be used by agreement with REA and are not for general provider use.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="features">features</h3>
+<p>The property attributes applicable to the listing. The available features contained in the features element are applicable to each of the following categories as per the below table. Where marked this denotes if the feature listed is available and should be used. Where a feature from the list is delivered but not accepted for that category our system will skip that field:</p>
+<table border="1" cellpadding="3" cellspacing="0">
+  <col width="123" />
+  <col width="126" span="6" />
+  <tr height="21">
+    <td height="21" bordercolor="#666666" bgcolor="#CCCCCC">Features</td>
+
+    <td bordercolor="#666666" bgcolor="#CCCCCC">type</td>
+    <td bordercolor="#666666" bgcolor="#CCCCCC"><div align="center">land</div></td>
+    <td bordercolor="#666666" bgcolor="#CCCCCC"><div align="center">rental</div></td>
+    <td bordercolor="#666666" bgcolor="#CCCCCC"><div align="center">holidayRental</div></td>
+    <td bordercolor="#666666" bgcolor="#CCCCCC"><div align="center">residential</div></td>
+    <td bordercolor="#666666" bgcolor="#CCCCCC"><div align="center">rural</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">bedrooms</td>
+    <td>integer</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">bathrooms</td>
+    <td>integer</td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">ensuite</td>
+
+    <td>integer</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">toilet</td>
+    <td>integer</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">livingArea</td>
+    <td>integer</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">garages</td>
+    <td>integer</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">carports</td>
+    <td>integer</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">remoteGarage</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">secureParking</td>
+    <td>boolean</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">study</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">dishwasher</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">builtinWardrobes</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">gym</td>
+
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">workshop</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">rumpusRoom</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">floorboards</td>
+    <td>boolean</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">broadband</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">payTV</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">ductedHeating</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">ductedCooling</td>
+
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">splitsystemHeating</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">hydronicHeating</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">splitsystemAircon</td>
+    <td>boolean</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">gasHeating</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">reverseCycleAircon</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">evaporativeCooling</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">airConditioning</td>
+
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">alarmSystem</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">vacuumSystem</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">intercom</td>
+    <td>boolean</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">pool</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">poolInGround</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">poolAboveGround</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">spa</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">tennisCourt</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">balcony</td>
+
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">deck</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">courtyard</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">outdoorEnt</td>
+    <td>boolean</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">shed</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">fullyFenced</td>
+    <td>boolean</td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">openFirePlace</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">openSpaces</td>
+
+    <td>integer</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+
+  <tr bordercolor="#999999" height="17">
+    <td height="17">heating</td>
+    <td>choice</td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center"></div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">hotWaterService</td>
+    <td>choice</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">insideSpa</td>
+    <td>boolean</td>
+
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+  <tr bordercolor="#999999" height="17">
+
+    <td height="17">outsideSpa</td>
+    <td>boolean</td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+
+  </tr>
+  <tr bordercolor="#999999" height="17">
+    <td height="17">otherFeatures</td>
+    <td>text</td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+    <td><div align="center"></div></td>
+
+    <td><div align="center">yes</div></td>
+    <td><div align="center">yes</div></td>
+  </tr>
+</table>
+
+<br />
+<br />
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="fencing">fencing</h3>
+<p>
+Describes the state of the fencing on a rural property.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;fencing&gt;Boundary and internal fencing all in good condition&lt;/fencing&gt;</code>
+</li></ul>
+
+<!--  Floorboards  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="floorboards">floorboards</h3>
+<p>
+Specifies if the listed property has Floorboards or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Floorboards present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;floorboards&gt;0&lt;/floorboards&gt;</code>
+</li><li><code>&lt;floorboards&gt;1&lt;/floorboards&gt;</code>
+</li><li><code>&lt;floorboards&gt;no&lt;/floorboards&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;floorboards&gt;-1&lt;/floorboards&gt;</code>
+</li><li><code>&lt;floorboards&gt;3.5&lt;/floorboards&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="floorplan">floorplan</h3>
+<p>
+Up to two floorplans may be provided  per property.
+The <em>floorplan</em> element is used to refer to a single GIF or JPEG image file.
+The content of the <em>floorplan</em> element may be MIME Base64 encoded image
+data.  Alternatively, the <em>file</em> attribute may refer to an image
+file included in the zip file bundle that the XML document came in.  A
+third option is the <em>url</em> attribute referring to an external URL
+where the image can be sorced.</p>
+
+<p>
+The <em>id</em> attribute refers to the sequence of the images.
+</p>
+
+<p>
+If no image source is named or provided and was previously uploaded for  the same id number
+then that image stored
+with REA will be deleted.</p>
+
+<h4>Validation</h4>
+
+<p>
+For the floorplan image to be valid:
+</p>
+<ul>
+<li>If an image is provided, then either the image data must be inline,
+  the <em>file</em> attribute must point to a file within the zip bundle;
+  or the <em>url</em> attribute points to a valid and accessible image.</li>
+<li>If image data is provided, it must be a valid GIF of JPEG format.  Other
+  image formats are not accepted.</li><li>The image file must not be greater than 100k bytes in physical size.
+</li><li>The <em>id</em> attribute must be either <kbd>1</kbd> or <kbd>2</kbd>.
+</li><li>The <em>modTime</em> attribute, if it exists, must follow the
+  <a href="#datetime">Date and Time validation rules</a>.
+</li>
+<li>The <em>modTime</em> must be set correctly to the last time the actual image/file was adjusted.</li>
+</ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#img">img</a>,
+<a href="#objects">objects</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="frontage">frontage</h3>
+<p>
+Represents the measurement of frontage for the property.  The <em>unit</em>
+attribute must be given.
+</p>
+<h4>Validation</h4>
+<p>
+The <em>frontage</em> value must be a number greater than zero, with or without
+a decimal portion.
+</p>
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;frontage&gt;18&lt;/frontage&gt;</code>
+</li><li><code>&lt;frontage unit="meter"&gt;12.4&lt;/frontage&gt;</code>
+</li></ul>
+<h5>Invalid Examples</h5>
+<ul>
+<li><code>&lt;frontage&gt;20 metres&lt;/frontage&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="franchise">franchise</h3>
+<p>
+Is this <a href="#business">business</a> part of a Franchise?
+</p>
+<p>
+Providing a <em>franchise</em> value of <kbd>yes</kbd> will ensure the listing is found in the franchise section of the site.
+</p>
+<p>
+Accepted values: <kbd>yes</kbd>, <kbd>no</kbd><br />
+Default: <kbd>no</kbd>
+</p>
+<h5>Valid Example</h5>
+<ul><li>&lt;franchise value="yes" /&gt;</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="fullyFenced">fullyFenced</h3>
+
+<p>
+    Indicates whether the property has a fence around the full perimeter.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="furnished">furnished</h3>
+<p>
+Specifies if the listed property is furnished or not.
+</p>
+
+<h4>Validation</h4>
+<p>
+<kbd>1</kbd>,  <kbd>yes</kbd>, and  <kbd>true</kbd> mean
+the property is furnished.
+<kbd>0</kbd>,  <kbd>no</kbd>, <kbd>false</kbd> and empty value mean
+the property is unfurnished.
+<br>All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;furnished&gt;&lt;/furnished&gt;</code>
+</li><li><code>&lt;furnished&gt;0&lt;/furnished&gt;</code>
+</li><li><code>&lt;furnished&gt;1&lt;/furnished&gt;</code>
+</li><li><code>&lt;furnished&gt;yes&lt;/furnished&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;furnished&gt;-1&lt;/furnished&gt;</code>
+</li><li><code>&lt;furnished&gt;3.5&lt;/furnished&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="furtherOptions">furtherOptions</h3>
+<p>
+Text describing any further options for a business or commercial property.
+</p>
+
+<h4>Validation</h4>
+<p>
+Up to 65535 characters of text is accepted as valid.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="garages">garages</h3>
+<p>
+For the property listing, the number of car spaces within the garage(s).
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted as one car space, while <kbd>no</kbd> or <kbd>false</kbd> are counted as none.
+An empty element is considered to be no garage present within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;garages&gt;&lt;/garages&gt;</code>
+</li><li><code>&lt;garages&gt;0&lt;/garages&gt;</code>
+</li><li><code>&lt;garages&gt;1&lt;/garages&gt;</code>
+</li><li><code>&lt;garages&gt;2&lt;/garages&gt;</code>
+</li><li><code>&lt;garages&gt;no&lt;/garages&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;garages&gt;-1&lt;/garages&gt;</code>
+</li><li><code>&lt;garages&gt;3.5&lt;/garages&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#carports">carports</a>.
+</p>
+
+<!-- Grey Water System -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="greyWaterSystem">greyWaterSystem</h3>
+<p>
+    Specifies if grey water system is included for the listed property or not.
+</p>
+<h4>Validation</h4>
+<p>
+    1, yes, and true mean grey water system is included. 0, no, false and empty value mean grey water system is not included.
+All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;greyWaterSystem&gt;0&lt;/greyWaterSystem&gt;</code>
+</li><li><code>&lt;greyWaterSystem&gt;1&lt;/greyWaterSystem&gt;</code>
+</li><li><code>&lt;greyWaterSystem&gt;no&lt;/greyWaterSystem&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;greyWaterSystem&gt;-1&lt;/greyWaterSystem&gt;</code>
+</li><li><code>&lt;greyWaterSystem&gt;3.5&lt;/greyWaterSystem&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ecoFriendly">ecoFriendly</a>.
+</p>
+
+<!--  Gas Heating  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="gasHeating">gasHeating</h3>
+<p>
+Specifies if the listed property has Gas Heating or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Gas Heating present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;gasHeating&gt;0&lt;/gasHeating&gt;</code>
+</li><li><code>&lt;gasHeating&gt;1&lt;/gasHeating&gt;</code>
+</li><li><code>&lt;gasHeating&gt;no&lt;/gasHeating&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;gasHeating&gt;-1&lt;/gasHeating&gt;</code>
+</li><li><code>&lt;gasHeating&gt;3.5&lt;/gasHeating&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<!--  Gym  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="gym">gym</h3>
+<p>
+Specifies if the listed property has a Gym or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Gym present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;gym&gt;0&lt;/gym&gt;</code>
+</li><li><code>&lt;gym&gt;1&lt;/gym&gt;</code>
+</li><li><code>&lt;gym&gt;no&lt;/gym&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;gym&gt;-1&lt;/gym&gt;</code>
+</li><li><code>&lt;gym&gt;3.5&lt;/gym&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="headline">headline</h3>
+<p>
+A single line description of the property.
+</p>
+<p>
+<span class="redtext">All property types must include a include a valid <em>headline</em>.</span></p>
+
+<h4>Validation</h4>
+<p>
+The headline may have up to 150 characters of alphabetic, numeric or
+punctuation characters. HTML tags will be removed if detected.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;headline&gt;Location! Location! Location!&lt;/headline&gt;</code>
+</li><li><code>&lt;headline&gt;Renovator's Delight!&lt;/headline&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="heating">heating</h3>
+<p>
+Specifies what type of heating the listed property has.
+</p>
+<h4>Validation</h4>
+<p>
+The <em>type</em> attribute must be one of <kbd>gas</kbd>,
+<kbd>electric</kbd>, <kbd>GDH</kbd>, <kbd>solid</kbd>, or
+<kbd>other</kbd>.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;heating type="GDH" /&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;heating type="nuclear" /&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="holidayCategory">holidayCategory</h3>
+<p>
+This element defines the principal rental holiday focus of the holiday property.
+</p>
+
+<table>
+<thead>
+<tr><th><em>Name</em></th><th></th></tr>
+</thead>
+<tbody><tr><td><kbd>House</kbd></td><td></td></tr>
+<tr><td><kbd>Alpine</kbd></td><td></td></tr>
+<tr><td><kbd>Apartment</kbd></td><td></td></tr>
+<tr><td><kbd>Backpacker-Hostel</kbd></td><td></td></tr>
+<tr><td><kbd>BedAndBreakfast</kbd></td><td></td></tr>
+<tr><td><kbd>Campground</kbd></td><td></td></tr>
+<tr><td><kbd>Caravan-HolidayPark</kbd></td><td></td></tr>
+<tr><td><kbd>DuplexSemi-detached</kbd></td><td></td></tr>
+<tr><td><kbd>ExecutiveRental</kbd></td><td></td></tr>
+<tr><td><kbd>FarmStay</kbd></td><td></td></tr>
+<tr><td><kbd>Flat</kbd></td><td></td></tr>
+<tr><td><kbd>Hotel</kbd></td><td></td></tr>
+<tr><td><kbd>House</kbd></td><td></td></tr>
+<tr><td><kbd>HouseBoat</kbd></td><td></td></tr>
+<tr><td><kbd>Lodge</kbd></td><td></td></tr>
+<tr><td><kbd>Motel</kbd></td><td></td></tr>
+<tr><td><kbd>Resort</kbd></td><td></td></tr>
+<tr><td><kbd>Retreat</kbd></td><td></td></tr>
+<tr><td><kbd>SelfContainedCottage</kbd></td><td></td></tr>
+<tr><td><kbd>ServicedApartment</kbd></td><td></td></tr>
+<tr><td><kbd>Studio</kbd></td><td></td></tr>
+<tr><td><kbd>Terrace</kbd></td><td></td></tr>
+<tr><td><kbd>Townhouse</kbd></td><td></td></tr>
+<tr><td><kbd>Unit</kbd></td><td></td></tr>
+<tr><td><kbd>Villa</kbd></td><td></td></tr>
+<tr><td><kbd>Other (Any type of holiday rental property that does not fit into the above categories)</kbd></td><td></td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+For a new property listing, there must be a <em>holidayCategory</em> element.
+</p>
+<p>
+The <em>name</em> attribute of the <em>holidayCategory</em> element must have
+a value equal to one of the values given in the above table.
+</p>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;holidayCategory name="Acreage/Semi Rural" /&gt;</code>
+</li><li><code>&lt;holidayCategory name="Warehouse" /&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="holidayRental">holidayRental</h3>
+<p>
+A property available as a holiday rental.
+</p>
+
+<table>
+<thead>
+<tr><th width="104"><em>status</em></th>
+<th width="359">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>offmarket</td><td>This property is not currently on the market.</td></tr>
+<tr><td>leased</td><td>The property has been leased or rented.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows the
+<a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="hotWaterService">hotWaterService</h3>
+<p>
+Specifies what type of hot water the listed property has.
+</p>
+<h4>Validation</h4>
+<p>
+The <em>type</em> attribute must be one of <kbd>gas</kbd>,
+<kbd>electric</kbd> or <kbd>solar</kbd>.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;hotWaterService type="gas" /&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;hotWaterService type="geothermal" /&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="idealFor">idealFor</h3>Coming Soon...
+<p> Indicates one or more situations/buyer types that the advertisied property would be suitable for. You may select one or many of the child elements.</p>
+<h4>Validation</h4>
+<p>The idealFor element is available for Residential and Rural listings and is limited to set child elements, firstHomeBuyer, investors, downsizing, couples, students, lrgFamilies, reitrees.</p>
+<p>A whole number greater than or equal to zero is accepted as valid. Any value greater than 1 is considered to be 1. Alternatively, yes or true are accepted, while no or false are counted as not present. An empty value is considered as there being no idealFor child element of selected type.</p>
+<h4>Valid Examples</h4>
+<ul>
+  <li><code>&lt;idealFor&gt;</code><code>&lt;couples&gt;yes&lt;/couples&gt;&lt;students&gt;yes&lt;/students&gt;&lt;/idealFor&gt;</code> </li>
+  <li><code>&lt;idealFor&gt;</code><code>&lt;couples&gt;1&lt;/couples&gt;&lt;students&gt;no&lt;/students&gt;&lt;/idealFor&gt;</code></li>
+</ul>
+<h4>Invalid Examples</h4>
+<ul>
+  <li><code>&lt;idealFor&gt;</code><code>&lt;couples&gt;-1&lt;/couples&gt;&lt;/idealFor&gt;</code> </li>
+  <li><code>&lt;idealFor&gt;</code><code>&lt;couples&gt;3.5&lt;/couples&gt;&lt;/idealFor&gt;</code></li>
+</ul>
+<p>&nbsp;</p>
+<h3>img</h3>
+<p>
+The <em>img</em> element is used to refer to a single JPEG image file.
+The content of the <em>img</em> element may be MIME Base64 encoded image
+data.  Alternatively, the <em>file</em> attribute may refer to an image
+file included in the zip file bundle that the XML document came in, or a
+third option is the <em>url</em> attribute referring to an external URL
+where the image can be sourced from.
+</p>
+
+<p>
+<strong>Please note:</strong>
+CMYK JPG images are not supported by our system and may be corrupted on
+the website. Please ensure your images are progressive RGB JPG to
+avoid corruption. Please note that Photoshop or other image editing
+software can be used to convert CMYK JPG images into RGB JPG images.</p>
+
+<p>
+The <em>id</em> attribute refers to the sequence of the image.  The
+<kbd>m</kbd> id is the main image displayed with the property, while
+<kbd>a</kbd> through to <kbd>l</kbd> are extra images, as are <kbd>n</kbd> through to <kbd>z</kbd>.</p>
+<p>
+<strong>Please note:</strong> <kbd>m</kbd> is reserved for <em>main only</em> and each id can only be used once for each listing.
+</p>
+
+<p>
+If you wish to delete an image, then you only need to provide the <em>id</em>
+attribute.  For example, to delete the 'a' image:
+</p>
+<blockquote>
+<p>
+<kbd>&lt;img id="a" /&gt;</kbd>
+</p>
+</blockquote>
+<p><span class="redtext"> If a valid <em>main</em> image is not provided the file will be rejected and the property
+will not be displayed on the site. Any attempt to remove a <em>main</em> image off
+an existing property will produce an error.</span></p>
+<p><span class="redtext"><strong>Please note:</strong> A floorplan does not consitute a property image.</span></p>
+<p>
+<strong>Please note:</strong> The image <em>modTime</em> allows REA processing to identify and change only
+those images requiring changing. Failure to send an updated <em>modTime</em> only for those images updated will not
+allow for optimal file processing and can mean processing delays for your files. If REA identifies delays in processing of your files due to incorrect modTimes provided we will notify you requesting that you update your system. Images should not be set to the same modTime as the listing if they have not been modified since the original upload.</p>
+<p><strong>Please note:</strong> If images are provided as a URI and sourced by REA a delay in transfer from the server they are hosted on can result in delays processing files within your upload queue. If REA detects above avergae delays sourcing these images you will be notified if these delays cause a breach of the 4 hour processing standard.</p>
+<h4>Validation</h4>
+
+<p>
+For the image to be valid:
+</p>
+<ul>
+<li>If an image is provided, then either the image data must be inline,
+  the <em>file</em> attribute must point to a file within the zip bundle;
+  or the <em>url</em> attribute points to a valid and accessible image.
+</li><li>If image data is provided, it must be a valid JPEG format.  Other
+  image formats are not acceptable.
+</li><li>The <em>id</em> attribute must be in the range <kbd>a</kbd> through
+  <kbd>z</kbd>.
+</li><li>The <em>modTime</em> attribute must follow the
+  <a href="#datetime">Date and Time validation rules</a>.
+</li></ul>
+
+<h4>Valid Examples</h4>
+<ul>
+  <li>&lt;img id="m" modTime="2007-01-21-12:30:00" url="http://realestate.com.au/picsatrea.jpg" format="jpg" /&gt;</li>
+  <li>&lt;img id="f" modTime="2007-01-21-12:30:00" file="picsatrea.jpg" format="jpg" /&gt;</li>
+</ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#floorplan">floorplan</a>,
+<a href="#objects">objects</a>.
+</p>
+
+<!--  Hydronic Heating  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="hydronicHeating">hydronicHeating</h3>
+<p>
+Specifies if the listed property has Hydronic Heating or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Hydronic Heating present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;hydronicHeating&gt;0&lt;/hydronicHeating&gt;</code>
+</li><li><code>&lt;hydronicHeating&gt;1&lt;/hydronicHeating&gt;</code>
+</li><li><code>&lt;hydronicHeating&gt;no&lt;/hydronicHeating&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;hydronicHeating&gt;-1&lt;/hydronicHeating&gt;</code>
+</li><li><code>&lt;hydronicHeating&gt;3.5&lt;/hydronicHeating&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="improvements">improvements</h3>
+<p>
+Describes any improvements made to a rural property.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;improvements&gt;&lt;/improvements&gt;</code>
+</li><li><code>&lt;improvements&gt;Shearing shed, barn and machinery shed.&lt;/improvements&gt;</code>
+</li></ul>
+<h4>See also</h4>
+<p>
+<a href="#ruralFeatures">ruralFeatures</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="insideSpa">insideSpa</h3>
+
+<p>
+Specifies whether the property has a spa inside the house.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="inspection">inspection</h3>
+<p>
+Used to specify a single open-for-inspection (OFI) timeslot.<br /><br />
+<b>Note:</b> Must be contained within the parent element tags
+</p>
+<h4>Validation</h4>
+<p>
+Only the following format is accepted as valid:
+<kbd><em>DD</em>-<em>MON</em>-<em>YYYY</em> <em>hh</em>:<em>mm</em><em>[am|pm]</em> to <em>hh</em>:<em>mm</em><em>[am|pm]</em></kbd>
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;inspectionTimes&gt;:</code><br />
+<code>&lt;inspection&gt;21-Dec-2006 11:00am to 1:00pm&lt;/inspection&gt;</code><br />
+<code>&lt;inspection&gt;02-Jan-2006 12:00pm to 12:30pm&lt;/inspection&gt;</code><br />
+<code>&lt;/inspectionTimes&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;inspection&gt;By Appointment&lt;/inspection&gt;</code>
+</li><li><code>&lt;inspection&gt;12-1 Fridays and Saturdays&lt;/inspection&gt;</code>
+</li></ul>
+<h4>See also</h4>
+<p>
+<a href="#inspectionTimes">inspectionTimes</a>.
+</p>
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="inspectionTimes">inspectionTimes</h3>
+<p>
+The parent element in which inspection child elements should be contained.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;inspectionTimes&gt;&lt;/inspectionTimes&gt;</code>
+</li></ul>
+<h4>See also</h4>
+<p>
+<a href="#inspection">inspection</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="intercom">intercom</h3>
+<p>
+Specifies if the listed property has an intercom or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any
+value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while
+<kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no intercom present within the
+property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;intercom&gt;&lt;/intercom&gt;</code>
+</li><li><code>&lt;intercom&gt;0&lt;/intercom&gt;</code>
+</li><li><code>&lt;intercom&gt;1&lt;/intercom&gt;</code>
+</li><li><code>&lt;intercom&gt;yes&lt;/intercom&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;intercom&gt;-1&lt;/intercom&gt;</code>
+</li><li><code>&lt;intercom&gt;3.5&lt;/intercom&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="irrigation">irrigation</h3>
+<p>
+Describes any developed irrigation on a rural property.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;irrigation&gt;&lt;/irrigation&gt;</code>
+</li><li><code>&lt;irrigation&gt;Electric pump from dam and bore.&lt;/irrigation&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ruralFeatures">ruralFeatures</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="isHomeLandPackage">isHomeLandPackage</h3>
+<p>
+Indicates if the property has been newly built OR is a House and Land Package for sale.<br />
+<br />
+This will also place the property as a 'New Home For Sale' on the website.<br />
+
+</p><p><b>NOTE:</b> Only Agents / Developers with 'New Homes'
+Subscriptions will see their listings in the 'New Homes For Sale'
+section of the website.<br /></p>
+
+<h4>Validation</h4>
+<p>
+The value must be one of <kbd>yes</kbd> or <kbd>no</kbd>.
+</p>
+<h4>See Also</h4>
+<p>
+<a href="#buildingDetails">buildingDetails</a>.
+</p>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="isMultiple">isMultiple</h3>
+<p>
+Available for <a href="#commercial">commercial</a> listings only.  This field
+indicates if this advertisement is for a single or multiple properties.
+The element must contain a <em>value</em> attribute with either <kbd>yes</kbd>
+or <kbd>no</kbd>.
+</p>
+<p>
+If the element is omitted for new listings then it is assumed that the
+commercial property listing is for a single property.
+</p>
+
+<h4>Valid Examples</h4>
+
+<ul>
+<li>&lt;isMultiple value="yes" /&gt;</li>
+<li>&lt;isMultiple value="no" /&gt;</li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="land">land</h3>
+<p>
+Represents a vacant undeveloped block of land available for sale.
+</p>
+<table>
+<thead>
+<tr><th width="94"><em>status</em></th>
+<th width="369">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>sold</td><td>The property has been sold.</td></tr>
+<tr>
+  <td>offmarket</td>
+  <td>The property is no longer to be advertised</td>
+</tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows the
+<a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="landCategory">landCategory</h3>
+<p>
+The intended use of the land.
+</p>
+
+<h4>Validation</h4>
+<p>
+The <em>name</em> attribute must be one of <kbd>Commercial</kbd> or <kbd>Residential</kbd>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="landDetails">landDetails</h3>
+<p>
+Used to describe the physical attributes of the <a href="#land">land</a> being offered
+</p>
+<p><b>See Also:</b> <a href="#area">area</a>, <a href="#frontage">frontage</a>, <a href="#depth">depth</a> and <a href="#crossOver">crossOver</a></p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="listingAgent">listingAgent</h3>
+<p>
+Specified contact details for the listing agent/s.
+</p>
+<p><a href="#residential">residential</a> listings can have 1 <em>listingAgent</em>.
+</p><p><a href="#commercial">commercial</a> and <a href="#business">business</a>
+listings can have 2 <em>listingAgent</em> values associated with each listing from the same <a href="#agentID">agentID</a>, or alternatively, 3 conjunctional <em>listingAgent</em> values from other offices.
+
+</p><h4>Validation</h4>
+<p>The <em>id</em> attribute refers to the sequence of the <em>listingAgent</em> and ranges from <kbd>1 - 4</kbd>.</p>
+<p>It is assumed that a listingAgent without an <a href="#agentID">agentID</a> or <em>id</em> attribute is the primary agent.</p>
+<p>Conjunctional <em>listingAgent</em> values must use the <em>id</em> attribute <kbd>2, 3</kbd> or <kbd>4</kbd> and must provide a valid <a href="#agentID">agentID</a></p>
+
+<p>If you wish to delete a <em>listingAgent</em>, then you only need to provide the <em>id</em> attribute.</p>
+<h5>Valid Example</h5>
+<ul><li><code>
+&lt;listingAgent id="1"&gt; <br />
+&nbsp;&nbsp;&lt;name&gt;Mr. Primary Lister&lt;/name&gt;  <br />
+&nbsp;&nbsp;&lt;telephone type="BH"&gt;05 1234 5678&lt;/telephone&gt;<br />
+&nbsp;&nbsp;&lt;email&gt;pl@somedomain.com.au&lt;/email&gt;    <br />
+&lt;/listingAgent&gt;      <br />
+&lt;listingAgent id="2"&gt;   <br />
+&nbsp;&nbsp;&lt;agentID&gt;XNWSUR&lt;/agentID&gt;    <br />
+&nbsp;&nbsp;&lt;name&gt;Mr. Conjunction Lister&lt;/name&gt;   <br />
+&nbsp;&nbsp;&lt;telephone type="BH"&gt;05 1234 5678&lt;/telephone&gt;   <br />
+&nbsp;&nbsp;&lt;email&gt;cl@somedomain.com.au&lt;/email&gt; <br />
+&lt;/listingAgent&gt;</code>
+</li></ul>
+<p><b>See Also:</b> <a href="#name">name</a>, <a href="#agentID">agentID</a>, <a href="#email">email</a> and <a href="#telephone">telephone</a>.
+
+</p><div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="livingAreas">livingAreas</h3>
+<p>
+For the property listing, the number of living areas available on the property.
+</p>
+
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid. Alternatively, yes or true are accepted as one living area, while no or false are counted as none. An empty element is considered to be no living area present within the property.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;livingAreas&gt;&lt;/livingAreas&gt;</code></li>
+<li><code>&lt;livingAreas&gt;0&lt;/livingAreas&gt;</code></li>
+<li><code>&lt;livingAreas&gt;1&lt;/livingAreas&gt;</code></li>
+<li><code>&lt;livingAreas&gt;3&lt;/livingAreas&gt;</code></li>
+<li><code>&lt;livingAreas&gt;yes&lt;/livingAreas&gt;</code></li>
+</ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;livingAreas&gt;-1&lt;/livingAreas&gt;</code>
+</li><li><code>&lt;livingAreas&gt;-3.5&lt;/livingAreas&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="lotNumber">lotNumber</h3>
+<p>
+The prefix to the streetNumber of the listing.
+</p>
+<p>
+Used by <a href="#land">land</a> and <a href="#commercialLand">commercialLand</a> listing types, this is in reference to a specified/allocated vacant
+undeveloped block of land.</p>
+<h5>Valid Example</h5>
+<ul>
+    <li>&lt;streetNumber&gt;12&lt;/streetNumber&gt;</li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="max">max</h3>
+<p>
+Used to specify some kind of maximum value, generally as the upper bound of a <a href="#range">range</a> element.
+</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#min">min</a>, <a href="#range">range</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="min">min</h3>
+<p>
+Used to specify some kind of minimum value, generally as the lower bound of a <a href="#range">range</a> element.
+</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#max">max</a>, <a href="#range">range</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="miniweb">miniweb</h3>
+<p>A URI linking to an external site that provides additional
+information about the property. Must only be used to link to site
+relevant to listing.</p>
+<p><a href="#commercial">commercial</a> and <a href="#business">business</a> listings can upload a maximum of 3 <em>miniweb</em> elements.  The <em>id</em> attribute refers to the sequence of the miniweb and ranges from <kbd>1 - 3</kbd>.</p>
+
+<h4>Validation</h4>
+<p>
+The <em>miniweb</em> must be a valid URI, and must refer to an accessible site.
+</p>
+
+<h5>Valid Example</h5>
+<ul><li>&lt;miniweb&gt;<br />
+          &nbsp;&lt;uri id="1"&gt;http://www.externalclientwebsite.com.au/101LonsdaleStreet.html&lt;/uri&gt;<br />
+          &nbsp;&lt;uri id="2"&gt;http:://www.externalclientwebsite.com.au/101LonsdaleStreetInterior.html&lt;/uri&gt;<br />
+          &nbsp;&lt;uri id="3"&gt; <br />
+        &lt;/miniweb&gt;
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="municipality">municipality</h3>
+<p>Represents the local administrative entity for a clearly defined territory typically governed by a mayor and a city council or municipal council.</p>
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="name">name</h3>
+<p>
+Represents, depending on the parent element, the <em>name</em> of a
+<a href="#businessCategory">businessCategory</a>, <a href="#businessSubCategory">businessSubCategory</a>,
+, <a href="#estate">estate</a>, <a href="#listingAgent">listingAgent</a>,  or <a href="#vendorDetails">vendorDetails</a>.
+</p>
+
+<h4>Validation</h4>
+<p>
+Can only contain text.
+</p>
+
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;name&gt;Kermit the Frog&lt;/name&gt;</code>
+</li><li><code>&lt;name&gt;Swampview Lakes&lt;/name&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="objects">objects</h3>
+<p>
+Objects are files attachments to the property.  Typically, they are binary
+files.</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#floorplan">floorplan</a>,
+<a href="#img">img</a>, <a href="#document">documents</a>.</p>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="openFirePlace">openFirePlace</h3>
+<p>
+Specifies if the listed property has an open fire place or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no fire place present within the
+property.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;openFirePlace&gt;&lt;/openFirePlace&gt;</code>
+</li><li><code>&lt;openFirePlace&gt;0&lt;/openFirePlace&gt;</code>
+</li><li><code>&lt;openFirePlace&gt;1&lt;/openFirePlace&gt;</code>
+</li><li><code>&lt;openFirePlace&gt;yes&lt;/openFirePlace&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;openFirePlace&gt;-1&lt;/openFirePlace&gt;</code>
+</li><li><code>&lt;openFirePlace&gt;3.5&lt;/openFirePlace&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="openSpaces">openSpaces</h3>
+<p>
+For the property listing, the number of car spaces available on the property that are neither a garage or carport e.g.
+A paved uncovered tandem parking space would be considered 2 open spaces.
+</p>
+
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid. Alternatively, yes or true are accepted as one car
+space, while no or false are counted as none. An empty element is considered to be no openSpaces present within the property.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;openSpaces&gt;&lt;/openSpaces&gt;</code></li>
+<li><code>&lt;openSpaces&gt;0&lt;/openSpaces&gt;</code></li>
+<li><code>&lt;openSpaces&gt;1&lt;/openSpaces&gt;</code></li>
+<li><code>&lt;openSpaces&gt;3&lt;/openSpaces&gt;</code></li>
+<li><code>&lt;openSpaces&gt;yes&lt;/openSpaces&gt;</code></li>
+</ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;openSpaces&gt;-1&lt;/openSpaces&gt;</code>
+</li><li><code>&lt;openSpaces&gt;-3.5&lt;/openSpaces&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#carports">carports</a> or <a href="#garages">garages</a>.
+</p>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="outdoorEnt">outdoorEnt</h3>
+
+<p>
+    Indicates whether the property has an outdoor entertaining area available.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="otherFeatures">otherFeatures</h3>
+<p>
+For all other features which do not fit within other feature elements in this XML schema,
+they can be listed here as comma-separated plain text.
+</p>
+<h4>Validation</h4>
+<p>
+Up to 100 characters of text is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;otherFeatures&gt;balcony, courtyard, stables&lt;/otherFeatures&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="outgoings">outgoings</h3>
+<p>
+Expenses incurred in generating income (rates, insurance, repairs etc)</p>
+
+<h4>Validation</h4>
+<p>
+The outgoings value is validated the same as for the <a href="#price"><em>price</em> element</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="outsideSpa">outsideSpa</h3>
+
+<p>
+Specifies whether the property has a spa that is outside the house.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="page">page</h3>
+
+<p>
+Specifies a page number that a street map reference can be found upon. This field will soon be deprecated
+</p>
+
+<h4>See Also</h4>
+
+<p>
+<a href="#streetDirectory">streetDirectory</a>,
+<a href="#reference">reference</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="parkingComments">parkingComments</h3>
+<p>Alphanumeric string to describe or make comments about the parking</p>
+
+<h4>validation</h4>
+<p>Up to 255 characters permitted.</p>
+<h5>Valid Example</h5>
+
+<ul>
+  <li>&lt;parkingComments&gt;Parking is monitored on each level&lt;/parkingComments&gt;</li>
+</ul>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="password">password</h3>
+
+<p>
+REA assigned password provided by the XML provider to REA to
+identify themselves.
+</p>
+
+<h4>Validation</h4>
+<p>
+The password may be up to 20 characters long, with any mix of alphabetic,
+alphanumeric and is specified by REA. An unrecognised or mismatched username and password will result in rejection of your file.
+</p>
+
+<!--  Pay TV Access  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="payTV">payTV</h3>
+<p>
+Specifies if the listed property has Pay TV Access or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Pay TV Access present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;payTV&gt;0&lt;/payTV&gt;</code>
+</li><li><code>&lt;payTV&gt;1&lt;/payTV&gt;</code>
+</li><li><code>&lt;payTV&gt;no&lt;/payTV&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;payTV&gt;-1&lt;/payTV&gt;</code>
+</li><li><code>&lt;payTV&gt;3.5&lt;/payTV&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="pool">pool</h3>
+
+<p>
+Specifies if the listed property has a swimming pool or not.
+</p>
+<p>
+To enable import of two pool types Pool will be deprecated in the near future and will be replaced with <a href="#poolInGround">poolInGround</a> and <a href="#poolAboveGround">poolAboveGround</a>. We recommend using these new elements.
+</p>
+<p>
+The <em>type</em> attribute can be used to specify an inground or above ground
+swimming pool.
+</p>
+
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any
+value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while
+<kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no pool present within the
+property.
+</p>
+<p>
+This element is not valid if there is no pool, but a <em>type</em> of pool is
+specified.
+This element is valid if there is a pool, and <em>type</em> is one of
+<kbd>inground</kbd> or <kbd>aboveground</kbd>.
+</p>
+<p>
+If there is a pool, but a <em>type</em> of pool is not defined, then the default
+type <kbd>inground</kbd> will be assumed.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;pool&gt;&lt;/pool&gt;</code>
+</li><li><code>&lt;pool&gt;0&lt;/pool&gt;</code>
+</li><li><code>&lt;pool&gt;1&lt;/pool&gt;</code>
+</li><li><code>&lt;pool&gt;yes&lt;/pool&gt;</code>
+</li><li><code>&lt;pool type="aboveground"&gt;yes&lt;/pool&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;pool&gt;-1&lt;/pool&gt;</code>
+</li><li><code>&lt;pool&gt;3.5&lt;/pool&gt;</code>
+</li><li><code>&lt;pool type="aboveground"&gt;no&lt;/pool&gt;</code>
+</li><li><code>&lt;pool type="aboveground"&gt;&lt;/pool&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="poolInGround">poolInGround</h3>
+
+<p>
+Specifies if the listed property has an inground swimming pool or not.
+</p>
+
+<h4>Validation</h4>
+<p>
+    1, yes, and true mean in ground pool is included. 0, no, false and empty value mean in ground pool is not included.
+All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;poolInGround&gt;&lt;/poolInGround&gt;</code>
+</li><li><code>&lt;poolInGround&gt;0&lt;/poolInGround&gt;</code>
+</li><li><code>&lt;poolInGround&gt;1&lt;/poolInGround&gt;</code>
+</li><li><code>&lt;poolInGround&gt;yes&lt;/poolInGround&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;poolInGround&gt;-1&lt;/poolInGround&gt;</code>
+</li><li><code>&lt;poolInGround&gt;3.5&lt;/poolInGround&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="poolAboveGround">poolAboveGround</h3>
+
+<p>
+Specifies if the listed property has an above ground swimming pool or not.
+</p>
+
+<h4>Validation</h4>
+<p>
+    1, yes, and true mean above ground pool is included. 0, no, false and empty value mean above ground pool is not included.
+All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;poolAboveGround&gt;&lt;/poolAboveGround&gt;</code>
+</li><li><code>&lt;poolAboveGround&gt;0&lt;/poolAboveGround&gt;</code>
+</li><li><code>&lt;poolAboveGround&gt;1&lt;/poolAboveGround&gt;</code>
+</li><li><code>&lt;poolAboveGround&gt;yes&lt;/poolAboveGround&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;poolAboveGround&gt;-1&lt;/poolAboveGround&gt;</code>
+</li><li><code>&lt;poolAboveGround&gt;3.5&lt;/poolAboveGround&gt;</code>
+</li></ul>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="petFriendly">petFriendly</h3>
+<p>
+Specifies if pets are allowed in the listed property or not.
+</p>
+
+<h4>Validation</h4>
+<p>
+<kbd>1</kbd>,  <kbd>yes</kbd>, and  <kbd>true</kbd> mean
+pets are allowed.
+<kbd>0</kbd>,  <kbd>no</kbd>, <kbd>false</kbd> and empty value mean
+pets are not allowed.
+<br>All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;petFriendly&gt;&lt;/petFriendly&gt;</code>
+</li><li><code>&lt;petFriendly&gt;0&lt;/petFriendly&gt;</code>
+</li><li><code>&lt;petFriendly&gt;1&lt;/petFriendly&gt;</code>
+</li><li><code>&lt;petFriendly&gt;yes&lt;/petFriendly&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;petFriendly&gt;-1&lt;/petFriendly&gt;</code>
+</li><li><code>&lt;petFriendly&gt;3.5&lt;/petFriendly&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="postcode">postcode</h3>
+<p>
+The postal code for the property.
+</p>
+
+<h4>Validation</h4>
+<p>
+The validation of Postcode is dependent upon the value of the <em><a href="#country">country</a></em> element and suburb.</p>
+<p>
+  For new Australian property listings, there must be a <em>postcode</em> value.</p>
+<ul>
+  <li>
+  For properties in Australia, the <em>postcode</em> value must be a four digit number, which must also be present in the Australia Post Postcode
+    database, <a href="http://www1.auspost.com.au/postcodes/">http://www1.auspost.com.au/postcodes/</a>.
+  </li>
+  <li>
+    For New Zealand properties, the <em>postcode</em> must be a four digit number. It is recommended the <em>postcode</em> be omited
+    and <a href="#suburb">suburb</a> + <a href="#region">region</a> uniquely identify the location of the property.
+</li>
+</ul>
+
+<h4>Valid Examples</h4>
+<p>
+For Australia:
+</p>
+<ul>
+<li><code>&lt;postcode&gt;3000&lt;/postcode&gt;</code>
+</li><li><code>&lt;postcode&gt;3217&lt;/postcode&gt;</code>
+</li><li><code>&lt;postcode&gt;0820&lt;/postcode&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<p>
+For Australia:
+</p>
+<ul>
+<li><code>&lt;postcode&gt;820&lt;/postcode&gt;</code>
+</li><li><code>&lt;postcode&gt;80210&lt;/postcode&gt;</code>
+</li><li>Any postcode between <code>2595</code> and <code>2599</code> (as at April 2003).
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="price">price</h3>
+<p>
+The <em>price</em> needs to be in the local currency for the property.
+For properties in Australia, the currency is assumed to be AUD$.
+For New Zealand listings it is NZD$.
+</p>
+<p><a href="#commercial">commercial</a> and <a href="#business">business</a> listings can specify whether or not GST is included in the <em>price</em>. This is done using the <em>tax</em> attribute.
+</p><p><a href="#business">business</a> for sale listings may have a <em>plusSAV</em> attribute. If this attribute has the value <kbd>yes</kbd>, then the <em>price</em> includes the cost of any Stock At Valuation into the total purchase price given.</p>
+<p>
+The <em>display</em> attribute controls if the price is to be displayed anywhere
+a buyer might see.
+</p>
+<p>
+Only <a href="#commercial">commercial</a> listings with an <a href="#isMultiple">isMultiple</a>
+value of <kbd>yes</kbd> may use the <a href="#range">range</a> element.
+</p>
+<p>
+<b>Please Note:</b> The <em>display</em> attribute controls if ANY
+pricing information is to be displayed on the site anywhere a visitor
+may see. This includes the display of the <a href="#price">price</a> and <a
+href="#priceView">priceView</a> fields.  The <a href="#priceView">priceView</a> will display instead of <a href="#price">price</a> or <a href="#commercialRent">commercialRent</a> if a <a href="#priceView">priceView</a> value is present.
+</p>
+
+<h4>Validation</h4>
+<p>
+'For Sale' (including auction) property listings (<a href="#business">business</a>, <a href="#land">land</a>,
+<a href="#residential">residential</a>, <a href="#rural">rural</a> and <a href="#commercial">commercial</a>), there must be a <em>price</em>
+element.
+</p>
+<p>
+The <em>price</em> value must be a number, with optional decimal places.
+</p>
+<p>
+The <em>display</em> attribute must be one of <kbd>yes</kbd> or <kbd>no</kbd>,
+otherwise it may be omitted entirely.  If it is <kbd>yes</kbd>, it is a validation
+error if there is no <em>price</em>.
+</p>
+<p>It is a validation error for <a href="#business">business</a> sale listings to omit a <a href="#tax">tax</a> value.</p>
+<p>It is a validation error for a non-Business listing to have the <em>plusSAV</em>
+attribute equaling <kbd>yes</kbd>.
+</p>
+
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;price&gt;240000&lt;/price&gt;</code>
+</li><li><code>&lt;price&gt;1200000&lt;/price&gt;</code>
+</li><li><code>&lt;price&gt;199999.95&lt;/price&gt;</code>
+</li>
+<li>For <a href="#commercial">commercial</a> listings only:
+&lt;price&gt;<br />
+&lt;range&gt;<br />
+&lt;min&gt;450000&lt;/min&gt;<br />
+&lt;max&gt;550000&lt;/max&gt;<br />
+&lt;/range&gt;<br />
+&lt;/price&gt;
+</li>
+</ul>
+<h5>Invalid Examples</h5>
+<ul>
+<li><code>&lt;price&gt;&lt;/price&gt;</code>
+</li><li><code>&lt;price&gt;0&lt;/price&gt;</code>
+</li><li><code>&lt;price&gt;$300000&lt;/price&gt;</code>
+</li><li><code>&lt;price&gt;1,500,000&lt;/price&gt;</code>
+</li><li><code>&lt;price&gt;250000-310000&lt;/price&gt;</code>
+</li><li><code>&lt;price display="yes"&gt;&lt;/price&gt;</code>
+</li></ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#range">range</a>, <a href="#priceView">priceView</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="priceView">priceView</h3>
+<p>A human-readable string displayed to describe the price of the property.</p>
+<p>The <a href="#priceView">priceView</a> will display instead of <a href="#price">price</a> or <a href="#commercialRent">commercialRent</a> if a <a href="#priceView">priceView</a> value is present.</p>
+
+<h4>Validation</h4>
+<p>Any mixture of up to 50 viewable alphabetic, numeric, or punctuation characters
+is accepted.</p>
+
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;priceView&gt;$200,000&lt;/priceView&gt;</code>
+</li><li><code>&lt;priceView&gt;Low $300,000's&lt;/priceView&gt;</code>
+</li><li><code>&lt;priceView&gt;Buyers above $700,000's&lt;/priceView&gt;</code>
+</li><li><code>&lt;priceView&gt;Price on request&lt;/priceView&gt;</code>
+</li></ul>
+
+<h5>Invalid Examples</h5>
+<ul>
+<li><code>&lt;priceView&gt;123456789012345678901234567890123456789012345678901&lt;/priceView&gt;</code></li></ul>
+<p><b>See Also: </b><a href="#price">price</a>.</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="propertyExtent">propertyExtent</h3>
+<p>This field refers to the section of the building that is for lease.  Is the <kbd>whole</kbd> building for lease or only a <kbd>part</kbd> - if none received - default to not applicable.</p>
+
+<p>Accepted values: <kbd>whole</kbd> or <kbd>part</kbd> <br />
+
+</p><h5>Valid Example</h5>
+<ul>
+
+<li>&lt;<code>propertyExtent&gt;whole&lt;/propertyExtent&gt;</code></li>
+</ul>
+
+<h5>Invalid Example</h5>
+<ul>
+<li>&lt;<code>propertyExtent&gt;half&lt;/propertyExtent&gt;</code></li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="purchaseOrder">purchaseOrder</h3>
+<p><i>Describes the billing purchase identifier used by an agent for property enhancements. This number will display on REA produced invoice statements</i></p>
+<p>For property listings falling under the category of commercial, commercialLand or business..</p>
+
+</p><h5>XML Examples</h5>
+<ul>
+<li>&lt;<code>purchaseOrder&gt;1234567890&lt;/purchaseOrder&gt;</code></li>
+<li>&lt;<code>purchaseOrder&gt;abc123&lt;/purchaseOrder&gt;</code></li>
+</ul>
+
+<h4>Validation</h4>
+<p>
+Any text up to 20 characters long is accepted as valid
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="range">range</h3>
+
+<p>
+Generally, this element is used to enclose a <a href="#min">min</a> and
+<a href="#max">max</a> value to specify a range of values.
+</p>
+
+<p>
+Specifically, this element is only to be used for <a href="#commercial">commercial</a>
+property listings.
+</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#isMultiple">isMultiple</a>, <a href="#max">max</a>, <a href="#min">min</a>,
+<a href="#price">price</a>, <a href="#rentPerSquareMetre">rentPerSquareMetre</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="reference">reference</h3>
+
+<p>
+Specifies a map reference upon a street directory map page that the property can
+be located upon. This element will be deprecated.</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#streetDirectory">streetDirectory</a>,
+<a href="#page">page</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="region">region</h3>
+<p>
+The region of the address is synonymous with the <a href="#state">state</a>,
+but is intended for use by New Zealand listings.  New Zealand listings
+may omit the state element and replace it with region.
+</p>
+<h4>Validation</h4>
+<p>
+For New Zealand the following states/regions are accepted:
+</p>
+<table border="1">
+<caption>Accepted New Zealand Regions</caption>
+<tbody><tr><th>Abbreviation</th><th>District</th></tr>
+<tr><td>acklnd</td><td>Auckland</td></tr>
+<tr><td>byplty</td><td>Bay Of Plenty</td></tr>
+<tr><td>cntbry</td><td>Canterbury</td></tr>
+<tr><td>crmndl</td><td>Coromandel</td></tr>
+<tr><td>gsbrne</td><td>Gisborne</td></tr>
+<tr><td>hwkbay</td><td>Hawkes Bay</td></tr>
+<tr><td>mnwtu</td><td>Manuwatu</td></tr>
+<tr><td>mrlbgh</td><td>Marlborough</td></tr>
+<tr><td>nlsn</td><td>Nelson</td></tr>
+<tr><td>nthlnd</td><td>Northland</td></tr>
+<tr><td>nthotg</td><td>North Otago</td></tr>
+<tr><td>otg</td><td>Otago</td></tr>
+<tr><td>sthlnd</td><td>Southland</td></tr>
+<tr><td>stwisl</td><td>Stewart Island</td></tr>
+<tr><td>trnki</td><td>Taranaki</td></tr>
+<tr><td>wkto</td><td>Waikato</td></tr>
+<tr><td>wlgton</td><td>Wellington</td></tr>
+<tr><td>wngnui</td><td>Wanganui</td></tr>
+<tr><td>wrapa</td><td>Wairarapa</td></tr>
+<tr><td>wstcst</td><td>West Coast</td></tr>
+</tbody></table>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="remoteGarage">remoteGarage</h3>
+
+<p>
+    Defines whether the property has a remotely controlled garage door.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="rent">rent</h3>
+<p>
+This describes the rental price for the property, including the period over
+which the rent amount applies, as well as whether to display the price or not.
+</p><p>
+Please note, Weekly Rental Price is mandatory for Residential Rental and Holiday
+Rental property types.
+</p><p>
+If you do not wish to show the Weekly Rental Price to the public, you can either
+hide the price by using the <em>display</em> attribute, or use the
+<a href="#priceView">PriceView</a> element to show additional information.
+However, if you choose to hide the price using the <em>display</em> attribute
+you can not have two conflicting instances of <em>display</em>.
+</p>
+
+<h4>Validation</h4>
+<ul>
+  <li>
+    The <em>rent</em> figure is validated the same as for the
+    <a href="#price"><em>price</em> element</a>.
+  </li>
+  <li>
+    The <em>period</em> attribute must be one of <kbd>week</kbd>,
+    <kbd>month</kbd>, <kbd>weekly</kbd> or <kbd>monthly</kbd>.
+  </li>
+  <li>
+    There can be multiple <em>rent</em> elements if you wish to specify a
+    price for both <kbd>monthly</kbd> and <kbd>weekly</kbd>. However,
+    at least one of the <em>rent</em> elements must be for a <kbd>weekly</kbd>
+    period.
+  </li>
+  <li>
+    The <em>display</em> attribute must be one of <kbd>yes</kbd> or
+    <kbd>no</kbd>, otherwise it may be omitted entirely. If it is
+    <kbd>yes</kbd>, it is a validation error if there is no rent.
+  </li>
+</ul>
+
+<h4>Valid Examples</h4>
+
+<ul>
+<li><code>&lt;rent period="week"&gt;120&lt;/rent&gt;</code></li>
+<li><code>&lt;rent period="weekly"&gt;200&lt;/rent&gt;</code>
+</li><li><code>&lt;rent display="no" period="weekly"&gt;200&lt;/rent&gt;</code>
+</li><li><code>&lt;rent display="yes" period="weekly"&gt;250&lt;/rent&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;rent&gt;120&lt;/rent&gt;</code>
+</li><li><code>&lt;rent period="weekly"&gt;0&lt;/rent&gt;</code>
+</li><li><code>&lt;rent period="weekly"&gt;null&lt;/rent&gt;</code>
+</li><li><code>&lt;rent period="weekly" display="1"&gt;145&lt;/rent&gt;</code>
+</li><li><code>&lt;rent period="weekly" display="No"&gt;180&lt;/rent&gt;</code></li>
+<li><code>&lt;rent display="yes" period="weekly"&gt;&lt;/rent&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="rentPerSquareMetre">rentPerSquareMetre</h3>
+
+<p>
+Used within the <a href="#commercialRent">commercialRent</a> element to
+indicates the rent per square metre per annum for a <a href="#commercial">commercial</a>
+property listing.  It is only relevant to listings with a <a href="#commercialListingType">commercialListingType</a>
+value of <kbd>lease</kbd> or <kbd>both</kbd>.
+</p>
+
+<h4>Validation</h4>
+<p>
+It is a validation error to include a range that does not have both a min and max value.
+</p>
+
+<h4>Valid Examples</h4>
+<p>
+See <a href="#commercialRent">commercialRent</a> for valid examples.
+</p>
+
+<h4>See Also</h4>
+<p>
+<a href="#commercialRent">commercialRent</a>,
+<a href="#range">range</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="rental">rental</h3>
+<p>
+A property available for rent.
+</p>
+
+<table>
+<thead>
+<tr><th width="88"><em>status</em></th>
+<th width="375">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>offmarket</td><td>This property is not currently on the market.</td></tr>
+<tr><td>leased</td><td>The property has been leased or rented.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows the
+<a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="residential">residential</h3>
+<p>
+A residential property for sale.
+</p>
+
+<table>
+<thead>
+<tr><th width="96"><em>status</em></th>
+<th width="367">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>offmarket</td><td>This property is not currently on the market.</td></tr>
+<tr><td>sold</td><td>The property has been sold.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows
+<a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="return">return</h3>
+<p>The annual rate of <em>return</em> in percentage provided by this listing.</p>
+<p>The Return on Investment will only be displayed on the site if the <a href="#tenancy">tenancy</a> value is <kbd>tenanted</kbd></p>
+
+
+<h4>Validation</h4>
+<p>
+The rate of return must be a number, followed optionally by a decimal point
+and a decimal component.
+</p>
+
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;return&gt;5&lt;/return&gt;</code>
+</li><li><code>&lt;return&gt;11.2&lt;/return&gt;</code>
+</li></ul>
+
+<h5>Invalid Examples</h5>
+<ul>
+<li><code>&lt;return&gt;5%&lt;/return&gt;</code>
+</li><li><code>&lt;return&gt;2.3%&lt;/return&gt;</code>
+</li><li><code>&lt;return&gt;$100,000&lt;/return&gt;</code>
+</li></ul>
+
+<!--  Reverse Cycle Air Conditioning  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="reverseCycleAirCon">reverseCycleAirCon</h3>
+<p>
+Specifies if the listed property has Reverse Cycle Air Conditioning or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Reverse Cycle Air Conditioning present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;reverseCycleAirCon&gt;0&lt;/reverseCycleAirCon&gt;</code>
+</li><li><code>&lt;reverseCycleAirCon&gt;1&lt;/reverseCycleAirCon&gt;</code>
+</li><li><code>&lt;reverseCycleAirCon&gt;no&lt;/reverseCycleAirCon&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;reverseCycleAirCon&gt;-1&lt;/reverseCycleAirCon&gt;</code>
+</li><li><code>&lt;reverseCycleAirCon&gt;3.5&lt;/reverseCycleAirCon&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<!--  Rumpus Room  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="rumpusRoom">rumpusRoom</h3>
+<p>
+Specifies if the listed property has Rumpus Room or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Rumpus Room present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;rumpusRoom&gt;0&lt;/rumpusRoom&gt;</code>
+</li><li><code>&lt;rumpusRoom&gt;1&lt;/rumpusRoom&gt;</code>
+</li><li><code>&lt;rumpusRoom&gt;no&lt;/rumpusRoom&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;rumpusRoom&gt;-1&lt;/rumpusRoom&gt;</code>
+</li><li><code>&lt;rumpusRoom&gt;3.5&lt;/rumpusRoom&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="rural">rural</h3>
+<p>
+A rural property.
+</p>
+
+<table>
+<thead>
+<tr><th width="89"><em>status</em></th>
+<th width="374">Description</th>
+</tr>
+</thead>
+<tbody><tr><td>current</td><td>The property has not yet been sold (or leased), and is still on offer.</td></tr>
+<tr><td>withdrawn</td><td>The property is withdrawn from the market for whatever reason.</td></tr>
+<tr><td>sold</td><td>The property has been sold.</td></tr>
+<tr>
+  <td>offmarket</td>
+  <td>The property is not currently being advertised</td>
+</tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>modTime</em> attribute follows the
+<a href="#datetime">Date and Time validation rules</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="ruralCategory">ruralCategory</h3>
+<p>
+This element defines the principal agricultural focus of the rural property.
+</p>
+
+<table>
+<thead>
+<tr><th><em>Name</em></th><th></th></tr>
+</thead>
+<tbody><tr><td>Cropping</td><td></td></tr>
+<tr><td>Dairy</td><td></td></tr>
+<tr><td>Farmlet</td><td></td></tr>
+<tr><td>Horticulture</td><td></td></tr>
+<tr><td>Lifestyle</td><td></td></tr>
+<tr><td>Livestock</td><td></td></tr>
+<tr><td>Viticulture</td><td></td></tr>
+<tr><td>MixedFarming</td><td></td></tr>
+<tr><td>Other</td><td>Any type of rural property that does not fit into the above categories.</td></tr>
+</tbody></table>
+
+<h4>Validation</h4>
+<p>
+The <em>name</em> attribute must have one of the values listed in
+the above table.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="ruralFeatures">ruralFeatures</h3>
+<p> This element defines particular rural aspects of the rural property. </p>
+<h4>Validation</h4>
+<p> For child elements available under ruralFeatures see <a href="#fencing">fencing</a>, <a href="#annualRainfall">annualRainfall</a>, <a href="#soilTypes">soilTypes</a>, <a href="#improvements">improvements</a>, <a href="#councilRates">councilRates</a>, <a href="#irrigation">irrigation</a>, <a href="#carryingCapacity">carryingCapacity</a>, <a href="#services">services</a></p>
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="secureParking">&nbsp;</h3>
+<h3>secureParking</h3>
+<p>
+    Indicates whether secure parking is available at the property.
+</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="services">services</h3>
+<p>
+Describes any services supplied to a rural property.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;services&gt;&lt;/services&gt;</code>
+</li><li><code>&lt;services&gt;Power, Telephone. School Bus to Front Gate.&lt;/services&gt;</code>
+</li><li><code>&lt;services&gt;Power, phone, sealed road.&lt;/services&gt;</code>
+</li><li><code>&lt;services&gt;Power, telephone, airstrip, school bus, mail.&lt;/services&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="shed">shed</h3>
+
+<p>
+    Indicates whether the property has  a shed included.</p>
+
+<h4>Validation</h4>
+
+<p>
+    Optional field. Possible values to indicate whether it exists are
+    <kbd>1</kbd>, <kbd>yes</kbd> or <kbd>true</kbd>. Setting it to <kbd>0</kbd>, <kbd>no</kbd> or
+    <kbd>false</kbd> will indicate that it does not exist. Leaving it undefined will
+    maintain the current value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="site">site</h3>
+<p>0 - 50 alphanumeric characters to display the name or <em>site</em> of the <a href="#commercial">commercial</a> or <a href="#business">business</a> listing</p>
+
+<h5>Valid Example</h5>
+
+<ul><li>
+&lt;address&gt;<br />
+&nbsp;&lt;site&gt;Victoria Gardens Shopping Complex&lt;/site&gt;<br />
+&lt;/address&gt;<br />
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="smokers">smokers</h3>
+<p>
+Specifies if smokers are welcome in the listed property or not.
+</p>
+
+<h4>Validation</h4>
+<p>
+<kbd>1</kbd>,  <kbd>yes</kbd>, and  <kbd>true</kbd> mean
+smokers are welcome.
+<kbd>0</kbd>,  <kbd>no</kbd>, <kbd>false</kbd> and empty value mean
+smokers are not welcome.
+<br>All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;smokers&gt;&lt;/smokers&gt;</code>
+</li><li><code>&lt;smokers&gt;0&lt;/smokers&gt;</code>
+</li><li><code>&lt;smokers&gt;1&lt;/smokers&gt;</code>
+</li><li><code>&lt;smokers&gt;yes&lt;/smokers&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;smokers&gt;-1&lt;/smokers&gt;</code>
+</li><li><code>&lt;smokers&gt;3.5&lt;/smokers&gt;</code>
+</li></ul>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="soilTypes">soilTypes</h3>
+<p>
+Describes the soil of a rural property.
+</p>
+<h4>Validation</h4>
+<p>
+Descriptive text of up to 65535 characters long is accepted as valid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;soilTypes&gt;red basalt&lt;/soilTypes&gt;</code>
+</li><li><code>&lt;soilTypes&gt;grey loams and dark clays&lt;/soilTypes&gt;</code>
+</li><li><code>&lt;soilTypes&gt;sand&lt;/soilTypes&gt;</code>
+</li></ul>
+
+<!-- Solar Hot Water -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="solarHotWater">solarHotWater</h3>
+<p>
+    Specifies if solar hot water is included for the listed property or not.
+</p>
+<h4>Validation</h4>
+<p>
+    1, yes, and true mean solar hot water is included. 0, no, false and empty value mean solar hot water is not included.
+All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;solarHotWater&gt;0&lt;/solarHotWater&gt;</code>
+</li><li><code>&lt;solarHotWater&gt;1&lt;/solarHotWater&gt;</code>
+</li><li><code>&lt;solarHotWater&gt;no&lt;/solarHotWater&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;solarHotWater&gt;-1&lt;/solarHotWater&gt;</code>
+</li><li><code>&lt;solarHotWater&gt;3.5&lt;/solarHotWater&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ecoFriendly">ecoFriendly</a>.
+</p>
+
+<!-- Solar Panels -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="solarPanels">solarPanels</h3>
+<p>
+    Specifies if solar panels are included for the listed property or not.
+</p>
+<h4>Validation</h4>
+<p>
+    1, yes, and true mean solar panels are included. 0, no, false and empty value mean solar panels are not included.
+All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;solarPanels&gt;0&lt;/solarPanels&gt;</code>
+</li><li><code>&lt;solarPanels&gt;1&lt;/solarPanels&gt;</code>
+</li><li><code>&lt;solarPanels&gt;no&lt;/solarPanels&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;solarPanels&gt;-1&lt;/solarPanels&gt;</code>
+</li><li><code>&lt;solarPanels&gt;3.5&lt;/solarPanels&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ecoFriendly">ecoFriendly</a>.
+</p>
+
+<!-- Sold Date -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="soldDate">soldDate</h3>
+
+<p>
+<em>soldDate</em> indicates the date the property was sold.  This should be the date the contract was signed and not the settlement date.
+</p>
+<p>
+This element is invalid if the date has not yet passed.
+</p>
+<p>This can only be included as an element of the <a href="#soldDetails">soldDetails</a>.  Please see the description of
+<a href="#datetime">Date and Time data</a> for a full description of what
+date and time formats are accepted, including examples.
+</p>
+<h4>Valid Examples</h4>
+
+<ul>
+<li><code>&lt;soldDate&gt;2005-03-03&lt;/soldDate&gt;</code></li>
+<li><code>&lt;soldDate&gt;20050303T1500&lt;/soldDate&gt;</code></li>
+<li><code>&lt;date&gt;2005-03-03&lt;/date&gt;</code></li>
+</ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;soldDate&gt;Yesterday&lt;/soldDate&gt;</code></li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="soldDetails">soldDetails</h3>
+
+<p>
+<em>soldDetails</em> must only be included if the property is sold and should include the <em>soldDate</em> and <em>soldPrice</em>
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="soldPrice">soldPrice</h3>
+
+<p>
+The price for which the property was sold. Indicates the actual sale
+price of the property as well as whether to display the price or not.
+This can only be included as an element of the <a href="#soldDetails">soldDetails</a></p>
+<p>
+<strong>NOTE: </strong> Negative sign will be ommited. For example, -250000 will be converted to 250000.
+</p>
+<h4>Validation</h4>
+<ul>
+<li>The <em>soldPrice</em> figure is validated the same as for the <a href="#price"><em>price</em>
+element</a>.
+</li><li>The <em>display</em> attribute must be one of <kbd>yes</kbd>, <kbd>no</kbd> or <kbd>range</kbd>, otherwise it may be omitted entirely. If it is omitted, we will assume the price is to be displayed.</li>
+</ul>
+
+<h4>Valid Examples</h4>
+
+<ul>
+<li><code>&lt;soldPrice&gt;250000&lt;/soldPrice&gt;</code></li>
+<li><code>&lt;soldPrice display="no"&gt;250000&lt;/soldPrice&gt;</code>
+</li><li><code>&lt;soldPrice display="yes"&gt;250000&lt;/soldPrice&gt;</code>
+</li><li><code>&lt;soldPrice display="range"&gt;250000&lt;/soldPrice&gt;</code>
+</li><li><code>&lt;price&gt;250000&lt;/price&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;soldPrice display="yes"&gt;&lt;/soldPrice&gt;</code></li>
+</ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="spa">spa</h3>
+
+<p>
+Spa will be deprecated in the near future and will be replaced with <a href="#insideSpa">insideSpa</a>
+and <a href="#outsideSpa">outsideSpa</a>.
+</p>
+
+<p>
+Specifies if the listed property has a spa or not.
+The <em>type</em> attribute can be used to specify an inground or above ground
+spa.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no spa present within the
+property.
+</p>
+<p>
+This element is not valid if there is no spa, but a <em>type</em> of spa is
+specified.
+This element is valid if there is a spa, and <em>type</em> is one of
+<kbd>inground</kbd> or <kbd>aboveground</kbd>.
+</p>
+<p>
+If there is a spa, but a <em>type</em> of spa is not defined, then the default
+type <kbd>inground</kbd> will be assumed.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;spa&gt;&lt;/spa&gt;</code>
+</li><li><code>&lt;spa&gt;0&lt;/spa&gt;</code>
+</li><li><code>&lt;spa&gt;1&lt;/spa&gt;</code>
+</li><li><code>&lt;spa&gt;yes&lt;/spa&gt;</code>
+</li><li><code>&lt;spa type="aboveground"&gt;yes&lt;/spa&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;spa&gt;-1&lt;/spa&gt;</code>
+</li><li><code>&lt;spa&gt;3.5&lt;/spa&gt;</code>
+</li><li><code>&lt;spa type="aboveground"&gt;no&lt;/spa&gt;</code>
+</li><li><code>&lt;spa type="aboveground"&gt;&lt;/spa&gt;</code>
+</li></ul>
+
+<!--  Split-System Air Conditioning  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="splitSystemAirCon">splitSystemAirCon</h3>
+<p>
+Specifies if the listed property has Split-System Air Conditioning or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Split-System Air Conditioning present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;splitSystemAirCon&gt;0&lt;/splitSystemAirCon&gt;</code>
+</li><li><code>&lt;splitSystemAirCon&gt;1&lt;/splitSystemAirCon&gt;</code>
+</li><li><code>&lt;splitSystemAirCon&gt;no&lt;/splitSystemAirCon&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;splitSystemAirCon&gt;-1&lt;/splitSystemAirCon&gt;</code>
+</li><li><code>&lt;splitSystemAirCon&gt;3.5&lt;/splitSystemAirCon&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<!--  Split-System Heating  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="splitSystemHeating">splitSystemHeating</h3>
+<p>
+Specifies if the listed property has Split-System Heating or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Split-System Heating present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;splitSystemHeating&gt;0&lt;/splitSystemHeating&gt;</code>
+</li><li><code>&lt;splitSystemHeating&gt;1&lt;/splitSystemHeating&gt;</code>
+</li><li><code>&lt;splitSystemHeating&gt;no&lt;/splitSystemHeating&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;splitSystemHeating&gt;-1&lt;/splitSystemHeating&gt;</code>
+</li><li><code>&lt;splitSystemHeating&gt;3.5&lt;/splitSystemHeating&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="stage">stage</h3>
+<p>
+Used for housing estates, describing what stage the release is part of.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="state">state</h3>
+<p>
+The state or territory where the listed property is located.
+</p>
+
+<h4>Validation</h4>
+<p>
+For a new property listing (residential, rental, land),
+the <em>state</em> must have a value.
+</p>
+<p>
+For properties in Australia, the <em>state</em> value must be
+one of (case is ignored):
+<kbd>act</kbd>, <kbd>nsw</kbd>, <kbd>nt</kbd>, <kbd>qld</kbd>,
+<kbd>sa</kbd>, <kbd>tas</kbd>, <kbd>vic</kbd> or <kbd>wa</kbd>.
+</p>
+
+<h4>See also</h4>
+<p>
+<a href="#region">region</a>,
+<a href="#address">address</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="street">street</h3>
+
+<h4>Validation</h4>
+<p>
+All <em>NEW</em> Residential Rental and Residential property listings, must have a street value.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="streetDirectory">streetDirectory</h3>
+
+<p>
+The <em>streetDirectory</em> element allows a street directory map reference to
+be defined for the property.  Typically, this map reference may be used to
+generate a map image for the property; or assist navigation to the property by
+potential buyers.
+This element will be deprecated.</p>
+
+<p>
+Currently, two types of street map reference are recognized (as specfied in the
+<em>type</em> attribute of <em>streetDirectory</em>).
+</p>
+<ul>
+<li><kbd>melways</kbd> for Melbourne Melways Street Directory references
+</li><li><kbd>UBD</kbd> for UBD Street directory references.
+</li></ul>
+
+<h4>See Also</h4>
+<p>
+<a href="#page">page</a>,
+<a href="#reference">reference</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="streetNumber">streetNumber</h3>
+<p>
+The number of the property on the street, not including the street name
+itself.
+</p>
+<p>
+It is strongly urged that any unit/flat/apartment numbers are placed before the
+street number.  The unit number should be separated from the street number by a
+forward slash '/'.
+</p>
+
+<h4>Validation</h4>
+<p>
+All Residential Rental and Residential Sale listings, must have a <em>streetNumber</em>.
+</p>
+<p>
+Up to 20 characters of text are allowed.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;streetNumber&gt;12&lt;/streetNumber&gt;</code>
+</li><li><code>&lt;streetNumber&gt;LOT 4A&lt;/streetNumber&gt;</code>
+</li><li><code>&lt;streetNumber&gt;2/102&lt;/streetNumber&gt;</code>
+</li><li><code>&lt;streetNumber&gt;Unit 5, 102&lt;/streetNumber&gt;</code>
+</li><li><code>&lt;streetNumber&gt;7 &amp;amp; 9&lt;/streetNumber&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+    <li>
+        <code>&lt;streetNumber&gt;1234567890123456789012&lt;/streetNumber&gt;</code>
+    </li>
+    <li>
+        <code>&lt;streetNumber&gt;7 &amp; 9&lt;/streetNumber&gt;</code>
+    (in general, any '
+        <code>&amp;</code>'
+        characters that you want to use must be encoded as '
+        <code>&amp;amp;</code>' in an XML document)
+    </li>
+    <li>
+        <code>0 (zero is not considered a valid street number and will be
+        rejected)
+        </code>
+    </li>
+</ul>
+<h4>See Also</h4>
+<p>
+<a href="#address">address</a>,
+<a href="#street">street</a>.
+</p>
+
+<!--  Study  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="study">study</h3>
+<p>
+Specifies if the listed property has Study or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Study present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;study&gt;0&lt;/study&gt;</code>
+</li><li><code>&lt;study&gt;1&lt;/study&gt;</code>
+</li><li><code>&lt;study&gt;no&lt;/study&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;study&gt;-1&lt;/study&gt;</code>
+</li><li><code>&lt;study&gt;3.5&lt;/study&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="subNumber">subNumber</h3>
+<p>The prefix to the <a href="#streetNumber">streetNumber</a> or
+<a href="#lotNumber">lotNumber</a> of the listing.</p>
+
+<p><a href="#commercial">commercial</a> and <a href="#business">business</a>
+listings, this is often in reference to the suite, shop, floor or factory
+number.</p>
+
+<p>For <a href="#residential">residential</a> listings, this is often in
+reference to the unit, flat or apartment number.</p>
+
+<p>Can be derived from the <a href="#streetNumber">streetNumber</a> field or
+sent as a value on its own</p>
+
+<h4>Validation</h4>
+<p>
+
+Listings can be uploaded with a <a href="#subNumber">subNumber</a> as a
+separate field, or it can be included as part of the
+<a href="#streetNumber">streetNumber </a> element but cannot include both.
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="suburb">suburb</h3>
+<p>
+The name of the suburb or town where the property is physically located.
+</p>
+<p>
+Business and Commercial listings may hide their suburb (and implicitly
+all of their address) from the buyer by setting the <em>display</em>
+attribute to <kbd>no</kbd>.
+</p>
+
+<h4>Validation</h4>
+<p>
+For a new property listing  there must be a suburb value.</p>
+<p>
+For listings where the country is Australia, the suburb must be listed in
+the Australia Post Postcode database.  This database is available at
+<a href="http://www1.auspost.com.au/postcodes/">http://www1.auspost.com.au/postcodes/</a>.
+</p>
+<p>
+The suburb element is invalid if <em>display</em> is <kbd>no</kbd> and
+the listed property is not either business or commercial.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;suburb&gt;Melbourne&lt;/suburb&gt;</code>
+</li><li><code>&lt;suburb&gt;MOUNT GAMBIER&lt;/suburb&gt;</code>
+</li><li><code>&lt;suburb&gt;NORTHBRIDGE&lt;/suburb&gt;</code>
+</li><li><code>&lt;suburb display="no"&gt;Brisbane&lt;/suburb&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;suburb&gt;MT GAMBIER&lt;/suburb&gt;</code>
+</li><li><code>&lt;suburb&gt;TIMBUCKTOO&lt;/suburb&gt;</code>
+</li><li><code>&lt;suburb display="no" /&gt;</code>
+</li><li><code>&lt;suburb display=""&gt;Brisbane&lt;/suburb&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#address">address</a>,
+<a href="#municipality">municipality</a>,
+<a href="#postcode">postcode</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="takings">takings</h3>
+<p>A description of the takings for the business.</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="tax">tax</h3>
+
+<p>Sale Tax</p>
+<p><a href="#business">business</a> listings must specify a GST or whether a GST is applicable.</p>
+
+<p>Accepted values: <kbd>unknown, exempt, inclusive</kbd> or <kbd>exclusive</kbd><br />
+Default: <kbd>unknown</kbd></p>
+
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;price tax="exempt"&gt;295000&lt;/price&gt;</code></li>
+<li><code>&lt;commercialRent period="annual" tax="inclusive"&gt;30000&lt;/commercialRent&gt;</code></li>
+</ul>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="telephone">telephone</h3>
+<p>
+Represents a single telephone number.  Area code must be included, international
+country prefix is optional.
+</p>
+
+<h4>Validation</h4>
+<p>
+A valid phone number consists of up to 40 numeric or whitespace characters.
+The phone number may optionally be prefixed with a plus character and country
+IDD code.
+</p>
+<p>
+The <em>type</em> attribute must be one of <kbd>BH</kbd>, <kbd>AH</kbd> or <kbd>mobile</kbd>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="tenancy">tenancy</h3>
+
+<p>Indicates whether or not the listing is a Vacant possession or
+Tenanted Investment. This is used for 'Tender' searching on the
+consumer side.</p>
+
+<p>Accepted values: <kbd>unknown, vacant</kbd> or <kbd>tenanted</kbd><br />Default: unknown</p>
+
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="tennisCourt">tennisCourt</h3>
+<p>
+Specifies if the listed property has a tennis court or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no tennis court present within the
+property.
+</p>
+<h5>Valid Examples</h5>
+<ul>
+<li><code>&lt;tennisCourt&gt;&lt;/tennisCourt&gt;</code>
+</li><li><code>&lt;tennisCourt&gt;0&lt;/tennisCourt&gt;</code>
+</li><li><code>&lt;tennisCourt&gt;1&lt;/tennisCourt&gt;</code>
+</li><li><code>&lt;tennisCourt&gt;yes&lt;/tennisCourt&gt;</code>
+</li></ul>
+<h5>Invalid Examples</h5>
+<ul>
+<li><code>&lt;tennisCourt&gt;-1&lt;/tennisCourt&gt;</code>
+</li><li><code>&lt;tennisCourt&gt;3.5&lt;/tennisCourt&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="terms">terms</h3>
+
+<p>Describes the sale terms of the property.</p>
+
+<h4>Validation</h4>
+<p>300 characters permitted.</p>
+
+<h5>Valid Example</h5>
+
+<ul><li><code>&lt;terms&gt;60 day settlement&lt;/terms&gt;</code></li></ul>
+
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="toilets">toilets</h3>
+<p>
+For the property listing, the number of toilets available on the property.
+</p>
+
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid. Alternatively, yes or true are accepted as one toilet, while no or false are counted as none. An empty element is considered to be no toilet present within the property.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;toilets&gt;&lt;/toilets&gt;</code></li>
+<li><code>&lt;toilets&gt;0&lt;/toilets&gt;</code></li>
+<li><code>&lt;toilets&gt;1&lt;/toilets&gt;</code></li>
+<li><code>&lt;toilets&gt;3&lt;/toilets&gt;</code></li>
+<li><code>&lt;toilets&gt;yes&lt;/toilets&gt;</code></li>
+</ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;toilets&gt;-1&lt;/toilets&gt;</code>
+</li><li><code>&lt;toilets&gt;-3.5&lt;/toilets&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+
+<h3 id="underOffer">underOffer</h3>
+<p>
+Describes if the property is currently under any offers.
+</p>
+
+<h4>Validation</h4>
+<p>
+The <em>value</em> attribute of <em>underOffer</em> must be one of <kbd>yes</kbd>
+or <kbd>no</kbd>.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;underOffer value="yes" /&gt;</code>
+</li><li><code>&lt;underOffer value="YES" /&gt;</code>
+</li><li><code>&lt;underOffer value="no" /&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;underOffer value="0" /&gt;</code>
+</li><li><code>&lt;underOffer value="1" /&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="uniqueID">uniqueID</h3>
+
+<p>
+Information supplied by the XML provider to uniquely identify a property
+for update.  The value must be unique for the real estate agent (different
+agents may use the same uniqueID, representing different properties).
+</p>
+
+<h4>Validation</h4>
+<p>
+Arbitary text with any mix of alphabetic, numeric, or punctuation; up to
+50 characters long.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;uniqueID&gt;1234567890&lt;/uniqueID&gt;</code>
+</li><li><code>&lt;uniqueID&gt;buckingham palace&lt;/uniqueID&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;uniqueID&gt;123456789012345678901234567890123456789012345678901&lt;/uniqueID&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="username">username</h3>
+<p>
+The identity of the XML provider.
+</p>
+
+<h4>Validation</h4>
+<p>
+The username may be from one to ten characters long, of alphabetic characters
+only (no digits or whitespace are permitted).  The named account must also
+exist and be active at RealEstate.com.au.
+</p>
+
+<h4>Valid Examples</h4>
+<p>
+(Assuming the accounts at RealEstate.com.au also exist and are active.)
+</p>
+
+<ul>
+<li><code>&lt;username&gt;kermit&lt;/username&gt;</code>
+</li><li><code>&lt;username&gt;gonzo&lt;/username&gt;</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+
+<ul>
+<li><code>&lt;username&gt;miss piggy&lt;/username&gt;</code>
+</li><li><code>&lt;username&gt;lilypondrealestate&lt;/username&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="vacuumSystem">vacuumSystem</h3>
+<p>
+Specifies if the listed property has a built-in ducted vacuum system or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;vacuumSystem&gt;0&lt;/vacuumSystem&gt;</code>
+</li><li><code>&lt;vacuumSystem&gt;1&lt;/vacuumSystem&gt;</code>
+</li><li><code>&lt;vacuumSystem&gt;no&lt;/vacuumSystem&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;vacuumSystem&gt;-1&lt;/vacuumSystem&gt;</code>
+</li><li><code>&lt;vacuumSystem&gt;3.5&lt;/vacuumSystem&gt;</code>
+</li></ul>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="vendorDetails">vendorDetails</h3>
+<p>
+Contains contact details for the vendor selling this property. See name, telephone, email</p>
+<!-- Water Tank -->
+<div class="linkback">
+  <p><a href="#elements">..back</a></p>
+</div>
+<h3 id="videoLink">videoLink</h3>
+<p> Properties may have links to a video display of the listing. </p>
+<h4>Validation</h4>
+<p> The <em>href</em> attribute of <em>videoLink</em> must be a valid <i>Video</i> URL, and
+  must refer to an accessible resource. This is not to be used as a link
+  to agent sites or any sites other than legitimate Video Files. </p>
+<!-- TODO: fix up these examples -->
+<p><code> eg. &lt;videoLink href=&quot;http://www.realestate.com.au/videos/VictoriaSt.avi&quot;/&gt;</code></p>
+<p> To remove an existing videoLink, include the videoLink element, leaving the <em>href</em> empty. </p>
+<p><code> eg. &lt;videoLink href=&quot;&quot;/&gt;</code></p>
+<h3 id="views">views</h3>Coming Soon...
+<p> Indicates the views, scenic or otherwise available from the property. </p>
+<h4>Validation</h4>
+<p>The views element is available for Residential, Rental, Rural and Land listings and is limited to set child elements, city, water, valley, mountain, ocean.</p>
+<p>A whole number greater than or equal to zero is accepted as valid. Any value greater than 1 is considered to be 1. Alternatively, yes or true are accepted, while no or false are counted as not present. An empty value is considered as there being no view of selected type present.</p>
+<h4>Valid Examples</h4>
+<ul>
+  <li><code>&lt;views&gt;</code><code>&lt;city&gt;yes&lt;/city&gt;&lt;valley&gt;yes&lt;/valley&gt;&lt;/views&gt;</code> </li>
+  <li><code>&lt;views&gt;</code><code>&lt;city&gt;1&lt;/city&gt;&lt;valley&gt;no&lt;/valley&gt;&lt;/views&gt;</code></li>
+</ul>
+<h4>Invalid Examples</h4>
+<ul>
+  <li><code>&lt;views&gt;</code><code>&lt;city&gt;-1&lt;/city&gt;&lt;/views&gt;</code> </li>
+  <li><code>&lt;views&gt;</code><code>&lt;city&gt;3.5&lt;/city&gt;&lt;/views&gt;</code></li>
+  </ul>
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="waterTank">waterTank</h3>
+<p>
+    Specifies if water tank included for the listed property or not.
+</p>
+<h4>Validation</h4>
+<p>
+    1, yes, and true mean water tank is included. 0, no, false and empty value mean water tank is not included.
+All other values are invalid.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;waterTank&gt;0&lt;/waterTank&gt;</code>
+</li><li><code>&lt;waterTank&gt;1&lt;/waterTank&gt;</code>
+</li><li><code>&lt;waterTank&gt;no&lt;/waterTank&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;waterTank&gt;-1&lt;/waterTank&gt;</code>
+</li><li><code>&lt;waterTank&gt;3.5&lt;/waterTank&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#ecoFriendly">ecoFriendly</a>.
+</p>
+
+
+<!--  Workshop  -->
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="workshop">workshop</h3>
+<p>
+Specifies if the listed property has Workshop or not.
+</p>
+<h4>Validation</h4>
+<p>
+A whole number greater than or equal to zero is accepted as valid.  Any value greater than <kbd>1</kbd> is considered to be <kbd>1</kbd>.
+Alternatively, <kbd>yes</kbd> or <kbd>true</kbd> are accepted, while <kbd>no</kbd> or <kbd>false</kbd> are counted as not present.
+An empty value is considered as there being no Workshop present
+within the property.
+</p>
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;workshop&gt;0&lt;/workshop&gt;</code>
+</li><li><code>&lt;workshop&gt;1&lt;/workshop&gt;</code>
+</li><li><code>&lt;workshop&gt;no&lt;/workshop&gt;</code>
+</li></ul>
+<h4>Invalid Examples</h4>
+<ul>
+<li><code>&lt;workshop&gt;-1&lt;/workshop&gt;</code>
+</li><li><code>&lt;workshop&gt;3.5&lt;/workshop&gt;</code>
+</li></ul>
+<h4>See Also</h4>
+<p>
+<a href="#features">features</a>.
+</p>
+
+<div class="linkback"><a href="#elements">..back</a></div>
+<h3 id="zone">zone</h3>
+<p>
+Describes the land-use zoning for this property.
+</p>
+
+<h4>Validation</h4>
+<p>
+Up to 150 characters of alphabetic, numeric or punctuation is accepted as valid.
+</p>
+
+<h4>Valid Examples</h4>
+<ul>
+<li><code>&lt;zone&gt;light industrial&lt;/zone&gt;</code>
+</li><li><code>&lt;zone&gt;FUTURE INDUSTRY&lt;/zone&gt;</code>
+</li><li><code>&lt;zone&gt;low density residential&lt;/zone&gt;</code>
+</li></ul>
+
+<h3 id="subscriber">Subscriber-Only Fields</h3>
+
+<ul>
+<li>marketing</li>
+<li>upgrade</li>
+<li>presentation</li>
+<li>style</li>
+<li>duration</li>
+</ul>
+
+<p>
+These fields are only available for subscribers - contact REA for more
+information.
+</p>
+
+<hr />
+
+<h2 id="types">Common Data Types</h2>
+
+<p>
+Various elements used by REAXML use common data types described below.
+</p>
+
+<h3 id="datetime">Dates and Times</h3>
+
+<p>
+Several ISO8601 date-time formats are accepted.
+An indicative list of accepted formats follows.
+</p>
+<ul>
+<li><kbd><em>YYYY</em>-<em>MM</em>-<em>DD</em></kbd>
+</li><li><kbd><em>YYYY</em>-<em>MM</em>-<em>DD</em>-<em>hh</em>:<em>mm</em></kbd>
+</li><li><kbd><em>YYYY</em>-<em>MM</em>-<em>DD</em>-<em>hh</em>:<em>mm</em>:<em>ss</em></kbd>
+</li><li><kbd><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>hh</em>:<em>mm</em></kbd>
+</li><li><kbd><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>hh</em>:<em>mm</em>:<em>ss</em></kbd>
+</li><li><kbd><em>YYYY</em><em>MM</em><em>DD</em></kbd>
+</li><li><kbd><em>YYYY</em><em>MM</em><em>DD</em>-<em>hh</em><em>mm</em></kbd>
+</li><li><kbd><em>YYYY</em><em>MM</em><em>DD</em>-<em>hh</em><em>mm</em><em>ss</em></kbd>
+</li><li><kbd><em>YYYY</em><em>MM</em><em>DD</em>T<em>hh</em><em>mm</em></kbd>
+</li><li><kbd><em>YYYY</em><em>MM</em><em>DD</em>T<em>hh</em><em>mm</em><em>ss</em></kbd>
+</li></ul>
+
+<p>
+January is month 1, December month 12.  The year value must be four digits, not
+two.  No time zone is assumed nor implied.
+</p>
+
+<h4>Validation</h4>
+<p>
+A date/time is accepted as valid if the format of the date string is well formed,
+the day of month is within the correct range of values depending on the year and
+month, and all other values are within the ranges as described below.
+</p>
+
+<ul>
+<li><em>YYYY</em> must be a four-digit year.  Two digit abbreviations are not
+  accepted.
+</li><li><em>MM</em> is the month number in the range 01 through 12 (zero-padded to
+  two digits).
+</li><li><em>DD</em> is the day of the month in the range 01 through 28, 29, 30 or 31,
+  as appropriate for the month (zero-padded to two digits).
+</li><li><em>hh</em> is the hour of the day, in the range 00 through 23 (zero-padded
+  to two digits).
+</li><li><em>mm</em> is the minute of the hour, in the range 00 through 59 (zero-padded
+  to two digits).
+</li><li><em>ss</em> is the second of the minute, in the range 00 through 59 (zero-padded
+  to two digits).  Leap-seconds will be ignored.
+</li></ul>
+
+<h4>Valid Examples</h4>
+
+<ul>
+<li><code>2003-04-01-12:30:00</code>
+</li><li><code>2003-12-16</code>
+</li><li><code>20040229T1500</code>
+</li></ul>
+
+<h4>Invalid Examples</h4>
+
+<ul>
+<li><code>1 January 2003</code>
+</li><li><code>Now</code>
+</li><li><code>last monday</code>
+</li><li><code>03-04-05</code>
+</li><li><code>2003-16-04</code>
+</li><li><code>2003-02-29</code>  (2003 is not a leap year)
+</li><li><code>2003-01-02 1pm</code>
+</li><li><code>06-07-2003 12:13</code>
+</li><li><code>19-Jul-2003 11:30 am</code>
+</li><li><code>04/08/03-15:00:00</code> (does it mean 3 August 2004, or 4 August 2003?)
+</li></ul>
+
+<hr />
+
+<h2 id="errors">XML Parser Errors</h2>
+
+<p>
+During the REAXML import process, the XML parser and data validator may produce a
+number of errors.  The errors are listed and described below.  For errors with
+property data, each error message is prefaced with the
+<a href="#uniqueID">uniqueID</a> value for that property.
+</p>
+
+<h3>Invalid <em>postcode</em> for suburb: <em>"suburb"</em></h3>
+<p>
+The Suburb provided in the XML file does not match the correct
+postcode. REAXML cross references postcodes by using the Australia Post
+Suburbs and Postcodes Database found at <a href="http://www1.auspost.com.au/postcodes/">http://www1.auspost.com.au/postcodes/</a>.
+</p>
+
+<h3>New properties require <em>price</em> values</h3>
+<p>
+A price value must be supplied for all NEW listings uploaded to
+realestate.com.au. This is to ensure search results return valid and
+applicable listings.
+</p>
+
+<h3>New rental properties require a <em>dateAvailable</em></h3>
+<p>
+A dateAvailable value must be supplied for all NEW rental listings to illustrate when a property is available.
+</p>
+
+<h3>New properties require <em>bedrooms</em> value</h3>
+<p>The number of bedrooms that a property has must be supplied for all
+NEW listings. This is a searchable field on realestate.com.au and as
+such needs to contain correct information to ensure search results are
+accurate.
+</p>
+
+<h3>New properties require <em>bathrooms</em> value</h3>
+<p>The number of bathrooms that a property has must be supplied for all
+NEW listings. This is a searchable field on realestate.com.au and as
+such needs to contain correct information to ensure search results are
+accurate.
+</p>
+
+<h3>Image <em>id</em> is not JPEG (image/jpeg) format</h3>
+<p>
+The image that was uploaded is not in JPEG format.  TIFF or other formats are
+not accepted for property photographs.  If you are getting this error, and the
+filename has the extension <kbd>.jpg</kbd> or <kbd>.jpeg</kbd> please ensure the
+file is actually a JPEG file, and not some other image format saved with the
+wrong extension.
+</p>
+
+<h3>Invalid <em>element</em>: "<em>value</em>"</h3>
+<p>
+The named element from the XML file has an value that does not pass its validation
+requirements.  A reason may be offered, alternatively look up the element dictionary
+for what is expected and accepted.
+</p>
+
+<h3>Invalid <em>element</em> <em>attribute</em>: "<em>value</em>"</h3>
+<p>
+The named attribute of an element from the XML file has an value that does not pass
+its validation requirements.  Look up the element dictionary for what is expected
+and accepted.
+</p>
+
+<h3>No agentID provided</h3>
+<p>
+A <a href="#agentID">agentID</a> element exists in the XML file, but it has no
+value.  A property cannot be imported without knowing which real estate agent
+it is from.
+</p>
+
+<h3>Not permitted to modify properties for agentID <em>agentID</em></h3>
+<p>
+The user that is providing the XML data does not have permission to create or
+modify properties for the named agent.
+</p>
+
+<h3>Cannot accept a <em>element1</em>without a valid <em>element2</em></h3>
+<p>
+The validity of one element depends on the validity of another.  For example,
+it is not possible to decide if a particular state or territory is valid
+without first knowing what country the property is in.  The value provided
+for the state in this example might be valid, but it is not possible to know
+until the country is resolved.
+</p>
+
+<h3>New <em>type</em> properties require <em>element</em> value</h3>
+<p>
+New property listing of the specified type require a value for the named
+element, but no value was found.
+</p>
+
+<h2 id="changes">Change History</h2>
+
+<h3>2 Feb 2010</h3>
+
+<ul>
+  <li>
+    Added new element of <a href="#ecoFriendly">ecoFriendly</a> with new options of <a href="#solarPanels">solarPanels</a>, <a href="#solarHotWater">solarHotWater</a>, <a href="#greyWaterSystem">greyWaterSystem</a> and <a href="#waterTank">waterTank</a> for residential, home and land package, rural and rental properties.  </li>
+  <li>
+  Added <a href="#videoLink">videoLink</a> element</li>
+  <li>
+    Added new  <a href="#allowances">allowances</a> element with optional child emelements of <a href="#petFriendly">petFriendly</a>, <a href="#smokers">smokers</a>,
+    and <a href="#furnished">furnished</a> for rental properties.  </li>
+  <li>
+  Enabled <a href="#tennisCourt">tennisCourt</a>, <a href="#poolAboveGround">poolAboveGround</a> and <a href="#poolInGround">poolInGround</a> feature fields for rental and rural category types.</li>
+  <li>Added <a href="#carports">carports</a> and <a href="#garages">garages</a> feature fields for rural category types.  </li>
+  <li>Added new child elements  <a href="#remoteGarage">remoteGarage</a>, <a href="#secureParking">secureParking</a>, <a href="#balcony">balcony</a>, <a href="#deck">deck</a>, <a href="#courtyard">courtyard</a>, <a href="#outdoorEnt">outdoorEnt</a>, <a href="#shed">shed</a>, <a href="#fullyFenced">fullyFenced</a>, <a href="#openSpaces">openSpaces</a>, <a href="#insideSpa">insideSpa</a>, <a href="#outsideSpa">outsideSpa</a>, <a href="#study">study</a>, <a href="#gasHeating">gasHeating</a>, <a href="#workshop">workshop</a>, <a href="#splitSystemHeating">splitSystemHeating</a>, <a href="#floorboards">floorboards</a>, <a href="#splitSystemAirCon">splitSystemAirCon</a>, <a href="#evaporativeCooling">evaporativeCooling</a>, <a href="#gym">gym</a>, <a href="#broadband">broadband</a>, <a href="#builtInRobes">builtInRobes</a>, <a href="#hydronicHeating">hydronicHeating</a>, <a href="#payTV">payTV</a>, <a href="#dishwasher">dishwasher</a>, <a href="#ductedHeating">ductedHeating</a>, <a href="#ductedCooling">ductedCooling</a>, <a href="#reverseCycleAirCon">reverseCycleAirCon</a>, <a href="#rumpusRoom">rumpusRoom</a>, <a href="#toilets">toilets</a> and <a href="#livingAreas">livingAreas</a> for the residential, home and land package, rural and rental properties in the element <a href="#features">Features</a>. </li>
+  <li>Enabled <a href="#pool">pool</a>, <a href="#tennisCourt">tennisCourt</a>, <a href="#alarmSystem">alarmSystem</a>, <a href="#intercom">intercom</a>, <a href="#vacuumSystem">vacuumSystem</a>, <a href="#openFirePlace">openFirePlace</a>, <a href="#airConditioning">airConditioning</a> for rental and rural properties in the element <a href="#features">Features</a>.  </li>
+  <li> Added <a href="#area">area</a> within <a href="#buildingDetails">buidingDetails</a> to rental and rural property types</li>
+  <li>
+    Added the <a href="#area">area</a> element within <a href="#landDetails">landDetails</a> to rental properties.  </li>
+  <li>
+  Modified the element <a href="#ensuite">ensuite</a> so that it  may store integer values.</li>
+  <li>Added <a href="#address">Address</a> attribute of <a href="#address">streetView</a> </li>
+</ul>
+
+<h3>25 Nov 2009</h3>
+
+<ul>
+  <li>
+    Changed validation rules for <a href="#energyRating">energyRating</a>.
+  </li>
+</ul>
+
+<h3>23 Jun 2009</h3>
+
+<ul>
+  <li>
+    Removed deprecated 'newlyBuilt' element. Please use isHomeLandPackage
+    to indicate if the property is a 'New Home For Sale' or a 'House and
+    Land Package for sale'.
+  </li>
+</ul>
+
+<h3>1 May 2009</h3>
+
+<ul>
+  <li>
+    Added the optional <a href="#availabilityLink">availabilityLink</a> element for
+    holidayRental listings.
+  </li>
+</ul>
+
+<h3>1 April 2009</h3>
+<ul>
+  <li>
+    Added category type specifically for holiday rentals. This replaces the use of the rental 'holiday'
+    attribute which will be discontinued in future but remains for backwards compatibility. 'holidayRental'
+    function with their own holiday Categories.
+  </li>
+</ul>
+
+<h3>16 March 2009</h3>
+<ul>
+  <li>
+    Added the <a href="#exclusivity">exclusivity</a> element for commercial and business listings.
+    This is a mandatory element which determines if the listing sent is open or exclusive.
+    The detail is not seen on the consumer website.
+  </li>
+</ul>
+
+<h3>5 March 2009</h3>
+<ul>
+  <li>
+  Added the <a href="#purchaseOrder">purchaseOrder</a> element for commercial, commericalLand and business
+  listings. This is a currently optional element, purely for the agent's convenience in tracking
+  depth product purchases on REA invoices to specific purchase orders.
+  </li>
+</ul>
+
+<h3>28 April 2008</h3>
+<ul>
+    <li>Removed obsolete <i>netProfit</i> and <i>currentRent</i> elements.</li>
+</ul>
+
+<h3>15 November 2007</h3>
+<ul>
+    <li>Added <a href="#subscriber">Subscriber only fields</a> for Commercial listings.
+    </li>
+    <li>Updated <a href="#datetime">Dates and Times</a> to better reflect valid date and time formats.
+    </li>
+</ul>
+<h3>18 March 2007</h3>
+
+<ul>
+<li>The <a href="#range">range</a> element was introduced for various
+elements belonging to <a href="#commercial">commercial</a> listings.
+Accordingly, <a href="#max">max</a> and <a href="#min">min</a> were
+introduced as child elements of <a href="#range">range</a>.
+</li>
+<li>The <a href="#rentPerSquareMetre">rentPerSquareMetre</a> element is introduced for <a
+href="#commercialRent">commercialRent</a>.</li>
+<li>The <a href="#isMultiple">isMultiple</a> element was introduced for <a href="#commercial">commercial</a> listings.</li>
+</ul>
+
+
+<h3>28 February 2007</h3>
+<ul>
+<li>Added Lifestyle to <a href="#ruralCategory">ruralCategory</a>.</li>
+</ul>
+
+<h3>18 January 2007</h3>
+
+<p>A number of changes were made due to the redesign of the
+'RealCommercial' websites to accomodate the intergration of the
+'Property Look' websites after the 2006 acquisition and to accomodate
+market needs. These are listed in the table below.</p>
+
+
+<p><b>New Fields Available</b></p>
+<ul><li>A number of new fields were implemented</li></ul>
+<table>
+<thead><tr><th>Field</th><th>Change Summary</th></tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
+            <a href="#subNumber">subNumber</a>
+        </td>
+        <td>The prefix to the
+            <a href="#streetNumber">
+                streetNumber
+            </a> or
+            <a href="#lotNumber">
+                lotNumber
+            </a> of the property.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#document">
+                document
+            </a>
+        </td>
+        <td>
+            Up to 10 PDF files can be attached to
+            <a href="#commercial">
+                commercial
+            </a> and
+            <a href="#business">
+                business
+            </a> listings.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#franchise">
+                franchise
+            </a>
+        </td>
+        <td>
+            Ability to enter a
+            <a href="#business">
+                business
+            </a>
+            listing in the franchise section of the site.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#miniweb">
+                miniweb
+            </a>
+        </td>
+        <td>
+            <a href="#commercial">
+                commercial
+            </a> and
+            <a href="#business">
+                business
+            </a> listings can upload a maximum of 3
+            <em>
+                miniweb
+            </em>
+            elements.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#parkingComments">
+                parkingComments
+            </a>
+        </td>
+        <td>
+            Alphanumeric string to describe or make comments about the parking.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#propertyExtent">
+                propertyExtent
+            </a>
+        </td>
+        <td>
+            Refers to the section of the building that is for lease.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#site">
+                site
+            </a>
+        </td>
+        <td>
+            0 - 50 alphanumeric characters to display the name or
+            <em>
+                site
+            </em>
+            of the
+            <a href="#commercial">
+                commercial
+            </a> or
+            <a href="#business">
+                business
+            </a>
+            listing.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#tax">
+                tax
+            </a>
+        </td>
+        <td>
+            Sale Tax
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#tenancy">
+                tenancy
+            </a>
+        </td>
+        <td>
+            Indicates whether or not the listing is a Vacant possession or
+            Tenanted Investment
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#terms">
+                terms
+            </a>
+        </td>
+        <td>
+            Describes the sale terms of the property.
+        </td>
+    </tr>
+</tbody></table>
+
+<p><b>Updated Fields</b></p>
+<ul><li>A number of changes were made to existing REA XML Fields</li></ul>
+<table>
+<thead><tr><th>Field</th><th>Change Summary</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#address">address</a></td><td>New sub-elements available, <a href="#subNumber">subNumber</a> and <a href="#site">site</a></td></tr>
+<tr><td><a href="#area">area</a></td><td><a href="#commercial">commercial</a> listings can have separate areas of function</td></tr>
+<tr><td><a href="#agentID">agentID</a></td><td>Now also used to identify a conjunctional <a href="#listingAgent">listingAgent</a> on <a href="#commercial">commercial</a> and <a href="#business">business</a> listings</td></tr>
+<tr><td><a href="#businessCategory">businessCategory</a></td><td>New Categories, available.  &nbsp; <kbd>Other</kbd> has been deprecated.  <br /><a href="#business">business</a> listings can have up to 3 different <em>businessCategory</em> values.</td></tr>
+<tr><td><a href="#businessSubCategory">businessSubCategory</a></td><td>New Sub-Categories, available. A number of sub-categories deprecated.  <br /><a href="#business">business</a>listings can now have up to 3 different <em>businessSubCategory</em> values.</td></tr>
+<tr><td><a href="#commercialAuthority">commercialAuthority</a></td><td>New Authority 'offers' available</td></tr>
+<tr><td><a href="#commercialCategory">commercialCategory</a></td>
+<td>New Categories, available. &nbsp; <kbd>Other</kbd> has been deprecated, all listings uploaded as <em>'Other'</em> will be mapped to the <em>'Retail' commercialCategory</em>.<br />
+<a href="#commercial">commercial</a> listings can have up to 3 different <em>commercialCategory</em> values.</td></tr>
+<tr><td><a href="#externalLink">externalLink</a></td><td><a href="#commercial">commercial</a> and <a href="#business">business</a> listings can now have 3 <em>externalLink</em> elements.</td></tr>
+<tr><td><a href="#listingAgent">listingAgent</a></td><td><a href="#commercial">commercial</a> and <a href="#business">business</a> listings can have up to 4 <em>listingAgent</em> values.</td></tr>
+<tr><td><a href="#price">price</a></td><td><a href="#commercial">commercial</a> and <a href="#business">business</a> listings can specify whether or not GST is included in the price. This is done using the <em>tax</em> attribute.</td></tr>
+<tr><td><a href="#return">return</a></td><td>The Return on Investment will be displayed on the site if the <a href="#tenancy">tenancy</a> value is tenanted.</td></tr>
+</tbody></table>
+
+<h3>24 October 2005</h3>
+<ul>
+  <li>
+    <a href="#rent">rent</a> element is allowed to appear multiple times to
+    allow for a <kbd>monthly</kbd> and a <kbd>weekly</kbd> variant. However
+    at least one instance of the <em>rent</em> element must be for the
+    <kbd>weekly</kbd> period.
+  </li>
+</ul>
+
+<h3>22 September 2005</h3>
+<ul>
+  <li>
+    <a href="#energyRating">energyRating</a> element was made a mandatory
+    field for new <a href="#residential">residential</a> properties that
+    have a <em>state</em> of <kbd>ACT</kbd>
+  </li>
+</ul>
+
+<h3>15 September 2005</h3>
+<ul>
+<li><a href="#energyRating">energyRating</a> element added to <a href="#buildingDetails">buildingDetails</a>.</li>
+</ul>
+
+<h3>10 June 2005</h3>
+<ul>
+<li><a href="#region">region</a> element added to <a href="#address">address</a>.</li>
+<li><a href="#commercialAuthority">commercialAuthority</a> extended with the
+    <em>forsale</em> option.</li>
+</ul>
+
+<h3>4 April 2005</h3>
+<ul>
+<li><a href="#description">description</a> became a compulsory field for all property types.</li>
+<li><a href="#headline">headline</a> became a compulsory field for all property types.</li>
+<li> All new properties must be sent with one <em>main</em> '<kbd>m</kbd>' image.  If a valid <em>main</em>
+image isn&#8217;t provided the file will be rejected and the property will
+not be displayed on realestate.com.au or realcommercial.com.au. Any
+attempt to remove a <em>main</em> image off an existing property will produce an error and any properties currently without any <em>main</em> image will produce and error the next time any attempt to update them is submitted.</li>
+</ul>
+
+<h3>23 August 2004</h3>
+<ul>
+<li><a href="#category">category</a> became a compulsory field, effective 23-08-2004</li>
+<li>Duplex and Demi-detached have been renamed and merged to DuplexSemi-detached</li>
+<li>Acreage and Semi-rural have been renamed and merged to AcreageSemi-rural</li>
+<li><a href="#streetNumber">streetNumber</a> became a compulsory field
+for Residential and Rental Properties. The element must be populated
+with a valid streetNumber and not empty.
+</li><li><a href="#street">street</a> became a compulsory field for Residential and Rental properties. The element must be populated or not empty.</li>
+<li><a href="#bedrooms">bedrooms</a> will became a compulsory field. If
+the listing is a Studio then Studio can be entered for the element data
+otherwise a whole number must be supplied.</li>
+<li><a href="#bathrooms">bathrooms</a> became a compulsory field. The element must include a whole number. It will be invalid if the element is empty.</li>
+<li><a href="#commercialListingType">commercialListingType</a> became a compulsory field. All listings must have this element included.</li>
+</ul>
+
+<h3>22 June 2004</h3>
+<ul>
+<li><a href="#priceView">priceView</a> element maximum content length increased from 40 to
+50 characters.</li>
+</ul>
+
+<h3>4 June 2004</h3>
+<ul>
+<li><a href="#headline">headline</a> element maximum content length increased from
+    120 to 150 characters.</li>
+</ul>
+
+<h3>3 June 2004</h3>
+<ul>
+<li>The <em>type</em> attribute of the <a href="#externalLink">externalLink</a>
+    element is deprecated and will be ignored.</li>
+<li>The <a href="#dateAvailable">dateAvailable</a> element manditory for
+    new rental property listings.</li>
+<li>Rental (and holiday rentals) now may have a <a href="#priceView">priceView</a>.</li>
+<li><a href="#rent">rent</a> may have a <em>display</em> attribute.</li>
+</ul>
+
+</body></html>

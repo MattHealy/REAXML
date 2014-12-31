@@ -1,0 +1,804 @@
+<!--     realestate.com.au propertyList DTD               -->
+<!--     $Revision: 1.61 $                                -->
+<!--     (c) REA Group Ltd 2010                           -->
+<!--     http://reaxml.realestate.com.au/propertyList.dtd -->
+
+<!ENTITY % yes_no "(yes|no)">
+<!ENTITY % ATT_TAX 'tax (unknown|exempt|inclusive|exclusive) "unknown"'>
+<!ENTITY % status_sellable "status ( current | withdrawn | offmarket | sold ) #REQUIRED">
+<!ENTITY % status_leasable "status ( current | withdrawn | offmarket | leased ) #REQUIRED">
+<!ENTITY % status_sellable_leasable "status ( current | withdrawn | sold | offmarket | leased ) #REQUIRED">
+
+<!ELEMENT propertyList ( business |
+                         commercial |
+                         commercialLand |
+                         land |
+                         rental |
+                         holidayRental |
+                         residential |
+                         rural )* >
+
+<!ATTLIST propertyList   date       CDATA #REQUIRED >
+<!ATTLIST propertyList   username   CDATA #REQUIRED >
+<!ATTLIST propertyList   password   CDATA #REQUIRED >
+
+<!ELEMENT residential  ( agentID,
+                         uniqueID,
+                         authority?,
+                         underOffer?,
+                         isHomeLandPackage?,
+                         listingAgent*,
+                         price?,
+                         priceView?,
+                         address?,
+                         municipality?,
+                         streetDirectory?,
+                         category?,
+                         headline?,
+                         description?,
+                         features?,
+                         soldDetails?,
+                         landDetails?,
+                         buildingDetails?,
+                         inspectionTimes?,
+                         auction?,
+                         vendorDetails*,
+                         externalLink*,
+                         videoLink?,
+                         extraFields?,
+                         images?,
+                         ecoFriendly?,
+                         idealFor?,
+                         views?,
+                         objects?                  ) >
+
+<!ATTLIST residential    modTime    CDATA #REQUIRED >
+<!ATTLIST residential    %status_sellable; >
+
+<!ELEMENT rental       ( agentID,
+                         uniqueID,
+                         listingAgent*,
+                         dateAvailable?,
+                         rent*,
+                         priceView?,
+                         bond?,
+                         address?,
+                         municipality?,
+                         streetDirectory?,
+                         category?,
+                         headline?,
+                         description?,
+                         features?,
+                         holiday?,
+                         landDetails?,
+                         buildingDetails?,
+                         inspectionTimes?,
+                         externalLink*,
+                         videoLink?,
+                         extraFields?,
+                         images?,
+                         objects?,
+                         ecoFriendly?,
+                         views?,
+                         allowances?                ) >
+
+<!ATTLIST rental         modTime    CDATA #REQUIRED >
+<!ATTLIST rental         %status_leasable; >
+
+<!ELEMENT holidayRental ( agentID,
+                         uniqueID,
+                         listingAgent*,
+                         dateAvailable?,
+                         rent*,
+                         priceView?,
+                         bond?,
+                         address?,
+                         municipality?,
+                         streetDirectory?,
+                         holidayCategory?,
+                         headline?,
+                         description?,
+                         features?,
+                         landDetails?,
+                         buildingDetails?,
+                         inspectionTimes?,
+                         externalLink*,
+                         availabilityLink?,
+                         extraFields?,
+                         images?,
+                         objects?        ) >
+
+<!ATTLIST holidayRental  modTime    CDATA #REQUIRED >
+<!ATTLIST holidayRental  %status_leasable; >
+
+<!ELEMENT rural        ( agentID,
+                         uniqueID,
+                         authority?,
+                         underOffer?,
+                         listingAgent*,
+                         price?,
+                         priceView?,
+                         address?,
+                         municipality?,
+                         streetDirectory?,
+                         ruralCategory?,
+                         headline?,
+                         description?,
+                         features?,
+                         ruralFeatures?,
+                         soldDetails?,
+                         landDetails?,
+                         buildingDetails?,
+                         inspectionTimes?,
+                         auction?,
+                         vendorDetails*,
+                         externalLink*,
+                         videoLink?,
+                         extraFields?,
+                         images?,
+                         ecoFriendly?,
+                         idealFor?,
+                         views?,
+                         objects?                ) >
+
+<!ATTLIST rural          modTime    CDATA #REQUIRED >
+<!ATTLIST rural          %status_sellable; >
+
+
+<!ELEMENT land         ( agentID,
+                         uniqueID,
+                         authority?,
+                         underOffer?,
+                         listingAgent*,
+                         price?,
+                         priceView?,
+                         address?,
+                         municipality?,
+                         estate?,
+                         streetDirectory?,
+                         landCategory?,
+                         headline?,
+                         description?,
+                         features?,
+                         soldDetails?,
+                         landDetails?,
+                         auction?,
+                         vendorDetails*,
+                         externalLink*,
+                         videoLink?,
+                         extraFields?,
+                         images?,
+                         views?,
+                         objects?        ) >
+
+<!ATTLIST land           modTime    CDATA #REQUIRED >
+<!ATTLIST land           %status_sellable; >
+
+
+<!ELEMENT commercial   ( agentID,
+                         uniqueID,
+                         marketing?,
+                         commercialAuthority?,
+                         exclusivity?,
+                         commercialListingType?,
+                         underOffer?,
+                         listingAgent*,
+                         price?,
+                         priceView?,
+                         commercialRent?,
+                         outgoings?,
+                         return?,
+                         currentLeaseEndDate?,
+                         tenancy?,
+                         furtherOptions?,
+                         isMultiple?,
+                         address?,
+                         municipality?,
+                         streetDirectory?,
+                         commercialCategory*,
+                         headline?,
+                         description?,
+                         soldDetails?,
+                         landDetails?,
+                         buildingDetails?,
+                         propertyExtent?,
+                         carSpaces?,
+                         parkingComments?,
+                         auction?,
+                         vendorDetails*,
+                         zone?,
+                         externalLink*,
+                         extraFields?,
+                         images?,
+                         objects?,
+                         miniweb?,
+                         purchaseOrder? )>
+
+<!ATTLIST commercial     modTime    CDATA #REQUIRED >
+<!ATTLIST commercial     %status_sellable_leasable; >
+
+<!ELEMENT commercialLand ( agentID,
+                         uniqueID,
+                         marketing?,
+                         authority?,
+                         commercialListingType?,
+                         underOffer?,
+                         listingAgent*,
+                         price?,
+                         priceView?,
+                         commercialRent?,
+                         outgoings?,
+                         return?,
+                         currentLeaseEndDate?,
+                         address?,
+                         municipality?,
+                         estate?,
+                         streetDirectory?,
+                         headline?,
+                         description?,
+                         soldDetails?,
+                         landDetails?,
+                         auction?,
+                         vendorDetails*,
+                         externalLink*,
+                         extraFields?,
+                         images?,
+                         objects?,
+                         miniweb?,
+                         purchaseOrder? )>
+
+<!ATTLIST commercialLand modTime    CDATA #REQUIRED >
+<!ATTLIST commercialLand %status_sellable_leasable; >
+
+
+<!ELEMENT business     ( agentID,
+                         uniqueID,
+                         marketing?,
+                         exclusivity?,
+                         commercialListingType?,
+                         underOffer?,
+                         listingAgent*,
+                         franchise?,
+                         price?,
+                         priceView?,
+                         businessLease*,
+                         takings?,
+                         return?,
+                         currentLeaseEndDate?,
+                         furtherOptions?,
+                         address?,
+                         municipality?,
+                         streetDirectory?,
+                         businessCategory*,
+                         headline?,
+                         description?,
+                         terms?,
+                         soldDetails?,
+                         vendorDetails*,
+                         externalLink*,
+                         extraFields?,
+                         images?,
+                         objects?,
+                         miniweb?,
+                         purchaseOrder? )>
+
+<!ATTLIST business       modTime    CDATA #REQUIRED >
+<!ATTLIST business       %status_sellable_leasable; >
+
+<!-- Terms: Terms and Conditions. -->
+<!ELEMENT terms (#PCDATA)>
+
+<!-- Miniweb: One to three URIs. -->
+<!ELEMENT miniweb (uri+)>
+
+<!-- A Uniform Resource Identifier, see [RFC2396]. -->
+<!ELEMENT uri (#PCDATA)>
+<!ATTLIST uri id (1|2|3) #REQUIRED>
+
+<!ELEMENT franchise EMPTY>
+<!ATTLIST franchise value %yes_no; "no">
+
+<!ELEMENT agentID      ( #PCDATA ) >
+<!ELEMENT uniqueID     ( #PCDATA ) >
+
+<!ELEMENT authority      EMPTY >
+<!ATTLIST authority      value      ( auction |
+                                      exclusive |
+                                      multilist |
+                                      conjunctional |
+                                      open |
+                                      sale |
+                                      setsale )           #REQUIRED >
+
+<!-- NOT FOR GENERAL USE -->
+<!ELEMENT extraFields  ( eField*) >
+<!ATTLIST extraFields    table      CDATA #REQUIRED >
+<!ELEMENT eField       ( #PCDATA ) >
+<!ATTLIST eField         name       CDATA #REQUIRED >
+
+<!-- Under Offer Option for Residential Properties -->
+<!ELEMENT underOffer     EMPTY >
+<!ATTLIST underOffer     value   %yes_no; "no" >
+
+<!-- Home land package for Residential Properties -->
+<!ELEMENT isHomeLandPackage EMPTY >
+<!ATTLIST isHomeLandPackage value %yes_no;  "no">
+
+<!ELEMENT dateAvailable ( #PCDATA ) >
+
+<!ELEMENT commercialListingType  EMPTY >
+<!ATTLIST commercialListingType  value (sale|lease|both) #REQUIRED >
+
+<!--
+    One to three conjunctional agents /*/listingAgent/*/agentID may be listed in
+    addition to the primary agent defined by the /*/agentID element.
+-->
+<!ELEMENT listingAgent  ( agentID?, name, telephone*, email? ) >
+<!ATTLIST listingAgent  id (1|2|3|4) "1" >
+<!ELEMENT name          ( #PCDATA ) >
+<!ELEMENT telephone     ( #PCDATA ) >
+<!ATTLIST telephone       type      ( BH | AH | mobile ) "BH" >
+<!ELEMENT email         ( #PCDATA ) >
+
+<!ELEMENT parkingComments (#PCDATA)>
+
+<!-- Tenancy: 'unknown', 'vacant', 'tenanted' -->
+<!ELEMENT tenancy (#PCDATA)>
+
+<!-- Property extent: 'whole', 'part' -->
+<!ELEMENT propertyExtent (#PCDATA)>
+
+<!--
+     Some numeric fields may be permitted to contain a range of values,
+     from min through max.
+-->
+<!ELEMENT range (min, max) >
+<!ELEMENT min (#PCDATA)>
+<!ELEMENT max (#PCDATA)>
+<!ENTITY % point_or_ranged_value "( #PCDATA | range )*">
+
+<!-- Price of property in dollars. Numbers only. Eg: 245000 -->
+<!-- All prices are in the local currency of the property. -->
+<!ELEMENT price        %point_or_ranged_value; >
+<!ATTLIST price
+    display %yes_no; "yes"
+    %ATT_TAX;
+>
+
+<!-- soldPrice is otherwise identical to the price element, except that
+     the approximate price range may be shown instead of the exact value -->
+<!ELEMENT soldPrice    ( #PCDATA ) >
+<!ATTLIST soldPrice      display   (yes|no|range) "yes" >
+
+<!-- For Business listings: -->
+<!ATTLIST price          plusSAV   %yes_no; "no" >
+
+<!-- Published description of price. Eg: Suit $220,000+ buyers -->
+<!ELEMENT priceView    ( #PCDATA ) >
+
+<!-- All rent/lease/bond amounts are in the local currency of the property. -->
+<!ELEMENT rent         ( #PCDATA ) >
+<!ATTLIST rent           period       (week|month|weekly|monthly) #REQUIRED
+                         display      %yes_no; "yes" >
+<!ELEMENT bond         ( #PCDATA ) >
+
+<!--
+    commercial rent per square metre per annum may be provided at the same
+    time as rent per annum.  The tax attribute, and outgoings values apply
+    to both rent/pa and rent/psm/pa.
+-->
+
+<!ELEMENT commercialRent ( #PCDATA | rentPerSquareMetre )* >
+<!ATTLIST commercialRent
+    period        (annual) #FIXED "annual"
+    plusOutgoings %yes_no; "no"
+    %ATT_TAX;
+>
+<!ELEMENT rentPerSquareMetre (range) >
+
+<!-- Commercial Features -->
+<!ELEMENT carSpaces ( #PCDATA ) >
+<!ELEMENT zone ( #PCDATA ) >
+
+<!ELEMENT businessLease  ( #PCDATA ) >
+<!ATTLIST businessLease    period   ( week|month|year|annual|
+                                      weekly|monthly|yearly|annually) #REQUIRED >
+
+<!ELEMENT outgoings    ( #PCDATA ) >
+<!ATTLIST outgoings      period           (annual)  #FIXED "annual" >
+
+<!ELEMENT takings      ( #PCDATA ) >
+
+<!ELEMENT return       ( #PCDATA ) >
+<!ATTLIST return         period           (annual)  #FIXED "annual" >
+<!ATTLIST return         unit             (percent) #FIXED "percent" >
+
+<!ELEMENT currentLeaseEndDate ( #PCDATA ) >
+
+<!ELEMENT furtherOptions      ( #PCDATA ) >
+
+<!-- Optional data to associate with a listing, which is then associated with
+     any upgrades applied to the listing and replicated onto
+     invoices. This is for the agents internal use.
+-->
+<!ELEMENT purchaseOrder (#PCDATA)>
+
+<!-- Any address without a country will default to Australia. -->
+<!-- Australian addresses require a state and postcode which will be validated on import -->
+<!-- New Zealand addresses require a region or postcode. -->
+
+<!ELEMENT address (
+    site?,
+    subNumber?,
+    lotNumber?,
+    streetNumber?,
+    street,
+    suburb,
+    ((state, postcode) | (region?, postcode?)),
+    country?)>
+<!ATTLIST address display %yes_no; "yes">
+<!ATTLIST address streetview %yes_no; "yes">
+
+<!ELEMENT site         ( #PCDATA ) >
+<!ELEMENT subNumber    ( #PCDATA ) >
+<!ELEMENT lotNumber    ( #PCDATA ) >
+<!ELEMENT streetNumber ( #PCDATA ) >
+<!ELEMENT street       ( #PCDATA ) >
+<!ELEMENT suburb       ( #PCDATA ) >
+<!-- Only Business and Commercial listings can hide suburb -->
+<!ATTLIST suburb         display   %yes_no; "yes" >
+<!ELEMENT state        ( #PCDATA ) >
+<!ELEMENT region       ( #PCDATA ) >
+<!ELEMENT postcode     ( #PCDATA ) >
+<!ELEMENT country      ( #PCDATA ) >
+
+<!ELEMENT municipality ( #PCDATA ) >
+
+<!ELEMENT estate       ( name, stage? ) >
+<!ELEMENT stage        ( #PCDATA ) >
+
+<!-- street directory references will not be displayed on any sites -->
+<!ELEMENT streetDirectory  ( page, reference ) >
+<!ATTLIST streetDirectory type       (melways|UBD) #REQUIRED >
+<!ELEMENT page         ( #PCDATA ) >
+<!ELEMENT reference    ( #PCDATA ) >
+
+<!ELEMENT category       EMPTY >
+<!ATTLIST category       name   ( House |
+                                  Unit |
+                                  Townhouse |
+                                  Villa |
+                                  Apartment |
+                                  Flat |
+                                  Studio |
+                                  Warehouse |
+                                  DuplexSemi-detached |
+                                  Alpine |
+                                  AcreageSemi-rural |
+                                  Retirement |
+                                  BlockOfUnits |
+                                  Terrace |
+                                  ServicedApartment |
+                                  Other  )                 #REQUIRED >
+
+<!ELEMENT holidayCategory EMPTY >
+<!ATTLIST holidayCategory name   ( Alpine |
+                                   Unit |
+                                   ServicedApartment |
+                                   House |
+                                   Terrace |
+                                   Flat |
+                                   Studio |
+                                   Villa |
+                                   Townhouse |
+                                   Apartment |
+                                   DuplexSemi-detached |
+                                   Retreat |
+                                   BackpackerHostel |
+                                   Campground |
+                                   CaravanHolidayPark |
+                                   FarmStay |
+                                   HouseBoat |
+                                   Hotel |
+                                   Motel |
+                                   Lodge |
+                                   ExecutiveRental |
+                                   BedAndBreakfast |
+                                   Resort |
+                                   SelfContainedCottage |
+                                   Other  )                 #REQUIRED >
+
+<!ELEMENT ruralCategory  EMPTY >
+<!ATTLIST ruralCategory  name   ( Cropping |
+                                  Dairy |
+                                  Farmlet |
+                                  Horticulture |
+                                  Livestock |
+                                  Viticulture |
+                                  MixedFarming |
+                                  Lifestyle |
+                                  Other     )              #REQUIRED >
+
+
+<!ELEMENT landCategory   EMPTY >
+<!ATTLIST landCategory   name   ( Commercial | Residential ) "Residential" >
+
+<!-- New Commercial Authorities -->
+<!ELEMENT commercialAuthority   EMPTY >
+<!ATTLIST commercialAuthority   value    ( auction | tender | eoi | sale | forsale | offers )     #REQUIRED >
+
+<!-- Agent Authority, is the property listed exclusively by this agent -->
+<!ELEMENT exclusivity   EMPTY >
+<!ATTLIST exclusivity   value    ( exclusive | open )     #REQUIRED >
+
+<!-- commecialCategory names must be one of a defined list of values. See http://reaxml.realestate.com.au -->
+<!ELEMENT commercialCategory EMPTY >
+<!ATTLIST commercialCategory
+    name CDATA "Retail"
+    id   (1|2|3) "1"
+>
+
+<!-- businessCategory and SubCategory names must be one of a defined list of values. See http://reaxml.realestate.com.au -->
+<!ELEMENT businessCategory (name, businessSubCategory?)>
+<!ATTLIST businessCategory id (1|2|3) #REQUIRED>
+<!ELEMENT businessSubCategory (name)>
+
+<!ELEMENT headline     ( #PCDATA ) >
+
+<!ELEMENT description  ( #PCDATA ) >
+
+<!-- Rental property to be displayed as a Holiday Rental:
+It is preferred that you use the holidayRental Element as this element is in the process of being removed
+ --> 
+<!ELEMENT holiday        EMPTY >
+<!ATTLIST holiday        value    %yes_no;       "no"  >
+
+<!ELEMENT features     ( bedrooms?,
+                         bathrooms?,
+                         ensuite?,
+                         garages?,
+                         carports?,
+                         remoteGarage?,
+                         secureParking?,
+                         airConditioning?,
+                         alarmSystem?,
+                         vacuumSystem?,
+                         intercom?,
+                         pool?,
+                         poolInGround?,
+                         poolAboveGround?,
+                         spa?,
+                         tennisCourt?,
+                         balcony?,
+                         deck?,
+                         courtyard?,
+                         outdoorEnt?,
+                         shed?,
+                         fullyFenced?,
+                         openFirePlace?,
+                         openSpaces?,
+                         toilets?,
+                         livingAreas?,
+                         heating?,
+                         hotWaterService?,
+                         insideSpa?,
+                         outsideSpa?,
+                         broadband?,
+                         builtInRobes?,
+                         dishwasher?,
+                         ductedCooling?,
+                         ductedHeating?,
+                         evaporativeCooling?,
+                         floorboards?,
+                         gasHeating?,
+                         gym?,
+                         hydronicHeating?,
+                         payTV?,
+                         reverseCycleAirCon?,
+                         rumpusRoom?,
+                         splitSystemAirCon?,
+                         splitSystemHeating?,
+                         study?,
+                         workshop?,
+                         otherFeatures? ) >
+
+<!-- 'features' child tags. Numerical values are prefered, however yes/no and true/false also accepted. -->
+<!ELEMENT bedrooms     ( #PCDATA ) >
+<!ELEMENT bathrooms    ( #PCDATA ) >
+<!ELEMENT ensuite      ( #PCDATA ) >
+<!ELEMENT garages      ( #PCDATA ) >
+<!ELEMENT carports     ( #PCDATA ) >
+<!ELEMENT remoteGarage ( #PCDATA ) >
+<!ELEMENT secureParking ( #PCDATA ) >
+<!ELEMENT airConditioning ( #PCDATA ) >
+<!ELEMENT alarmSystem  ( #PCDATA ) >
+<!ELEMENT vacuumSystem ( #PCDATA ) >
+<!ELEMENT intercom     ( #PCDATA ) >
+<!-- the following pool element will be deprecated in the near future and replaced with poolInGround & poolAboveGround. The element will remain for backwards compatibility -->
+<!ELEMENT pool         ( #PCDATA ) >
+<!ATTLIST pool           type (inground|aboveground) "inground" >
+<!ELEMENT poolInGround    ( #PCDATA ) >
+<!ELEMENT poolAboveGround ( #PCDATA ) >
+<!-- the following spa elements will be deprecated in the near future and replaced with insideSpa & outsideSpa-->
+<!ELEMENT spa          ( #PCDATA ) >
+<!ATTLIST spa            type (inground|aboveground) "inground" >
+<!ELEMENT tennisCourt  ( #PCDATA ) >
+<!ELEMENT balcony      ( #PCDATA ) >
+<!ELEMENT deck         ( #PCDATA ) >
+<!ELEMENT courtyard    ( #PCDATA ) >
+<!ELEMENT outdoorEnt   ( #PCDATA ) >
+<!ELEMENT shed         ( #PCDATA ) >
+<!ELEMENT fullyFenced  ( #PCDATA ) >
+<!ELEMENT openFirePlace ( #PCDATA ) >
+<!ELEMENT openSpaces  ( #PCDATA ) >
+<!ELEMENT toilets     ( #PCDATA ) >
+<!ELEMENT livingAreas ( #PCDATA ) >
+<!ELEMENT heating        EMPTY >
+<!ATTLIST heating        type (gas|electric|GDH|solid|other) "other" >
+<!ELEMENT hotWaterService EMPTY >
+<!ATTLIST hotWaterService type (gas|electric|solar)          #REQUIRED >
+<!ELEMENT insideSpa ( #PCDATA ) >
+<!ELEMENT outsideSpa ( #PCDATA ) >
+<!ELEMENT broadband                      ( #PCDATA ) >
+<!ELEMENT builtInRobes                   ( #PCDATA ) >
+<!ELEMENT dishwasher                     ( #PCDATA ) >
+<!ELEMENT ductedCooling                  ( #PCDATA ) >
+<!ELEMENT ductedHeating                  ( #PCDATA ) >
+<!ELEMENT evaporativeCooling             ( #PCDATA ) >
+<!ELEMENT floorboards                    ( #PCDATA ) >
+<!ELEMENT gasHeating                     ( #PCDATA ) >
+<!ELEMENT gym                            ( #PCDATA ) >
+<!ELEMENT hydronicHeating                ( #PCDATA ) >
+<!ELEMENT payTV                          ( #PCDATA ) >
+<!ELEMENT reverseCycleAirCon             ( #PCDATA ) >
+<!ELEMENT rumpusRoom                     ( #PCDATA ) >
+<!ELEMENT splitSystemAirCon              ( #PCDATA ) >
+<!ELEMENT splitSystemHeating             ( #PCDATA ) >
+<!ELEMENT study                          ( #PCDATA ) >
+<!ELEMENT workshop                       ( #PCDATA ) >
+<!-- List any other features as text in the otherFeatures element. -->
+<!ELEMENT otherFeatures ( #PCDATA ) >
+
+<!-- Rental only allowances-->
+<!ELEMENT allowances (petFriendly?, furnished?, smokers?)>
+<!ELEMENT petFriendly (#PCDATA)>
+<!ELEMENT furnished (#PCDATA)>
+<!ELEMENT smokers (#PCDATA)>
+
+<!-- Eco Friendly Property options-->
+<!ELEMENT ecoFriendly     (solarPanels?, solarHotWater?, waterTank?, greyWaterSystem?)>
+<!ELEMENT solarPanels     (#PCDATA)>
+<!ELEMENT solarHotWater   (#PCDATA)>
+<!ELEMENT waterTank       (#PCDATA)>
+<!ELEMENT greyWaterSystem (#PCDATA)>
+
+<!-- Ideal for Property options-->
+<!ELEMENT idealFor     (firstHomeBuyer?, investors?, downsizing?, couples?, students?, lrgFamilies?, reitrees?)>
+<!ELEMENT firstHomeBuyer     (#PCDATA)>
+<!ELEMENT investors   (#PCDATA)>
+<!ELEMENT downsizing       (#PCDATA)>
+<!ELEMENT couples (#PCDATA)>
+<!ELEMENT students   (#PCDATA)>
+<!ELEMENT lrgFamilies       (#PCDATA)>
+<!ELEMENT reitrees (#PCDATA)>
+
+<!-- Views from Property -->
+<!ELEMENT views     (city?, water?, valley?, mountain?, ocean?)>
+<!ELEMENT city     (#PCDATA)>
+<!ELEMENT water   (#PCDATA)>
+<!ELEMENT valley       (#PCDATA)>
+<!ELEMENT mountain (#PCDATA)>
+<!ELEMENT ocean   (#PCDATA)>
+
+<!ELEMENT ruralFeatures ( fencing?,
+                         annualRainfall?,
+                         soilTypes?,
+                         improvements?,
+                         councilRates?,
+                         irrigation?,
+                         carryingCapacity?,
+                         services? ) >
+<!-- All tags should contain a descriptive string -->
+<!ELEMENT fencing          ( #PCDATA ) >
+<!ELEMENT annualRainfall   ( #PCDATA ) >
+<!ELEMENT soilTypes        ( #PCDATA ) >
+<!ELEMENT improvements     ( #PCDATA ) >
+<!ELEMENT councilRates     ( #PCDATA ) >
+<!ELEMENT irrigation       ( #PCDATA ) >
+<!ELEMENT carryingCapacity ( #PCDATA ) >
+<!ELEMENT services         ( #PCDATA ) >
+
+<!-- Only include soldDetails element if property is sold. -->
+<!ELEMENT soldDetails   ( (price | soldPrice)?, (date | soldDate)? ) >
+<!-- Use same price element as above. Includes display attribute. -->
+<!ELEMENT soldDate      ( #PCDATA ) >
+<!ELEMENT date          ( #PCDATA ) >
+
+<!ELEMENT landDetails   ( area?, frontage?, depth*, crossOver? ) >
+<!ELEMENT area          %point_or_ranged_value; >
+<!ATTLIST area
+    unit  (square|squareMeter|acre|hectare) #REQUIRED
+    of    CDATA                             "total"
+>
+<!ELEMENT frontage      ( #PCDATA ) >
+<!ATTLIST frontage        unit   (meter)  #FIXED "meter" >
+<!ELEMENT depth         ( #PCDATA ) >
+<!ATTLIST depth           unit   (meter)  #FIXED "meter" >
+<!ATTLIST depth           side   ( rear | left | right )  #REQUIRED >
+<!ELEMENT crossOver       EMPTY  >
+<!ATTLIST crossOver       value  ( left | right | center )  #REQUIRED >
+
+<!ELEMENT buildingDetails ( area*, energyRating? ) >
+<!-- A value of 0-10 in .5 increments is expected. Mandatory for ACT homes-->
+<!ELEMENT energyRating  ( #PCDATA ) >
+
+<!ELEMENT inspectionTimes ( inspection+ ) >
+<!-- Example value for inspection: 21-Dec-2010 11:00am to 1:00pm -->
+<!ELEMENT inspection    ( #PCDATA ) >
+
+<!ELEMENT auction         EMPTY >
+<!ATTLIST auction         date CDATA #REQUIRED >
+
+<!ELEMENT vendorDetails ( name?, telephone*, email? ) >
+
+<!ELEMENT externalLink    EMPTY >
+<!ATTLIST externalLink
+    href    CDATA   #REQUIRED
+>
+<!ELEMENT videoLink       EMPTY >
+<!ATTLIST videoLink
+    href    CDATA   #REQUIRED
+>
+
+<!ELEMENT availabilityLink EMPTY >
+<!ATTLIST availabilityLink
+    href    CDATA   #REQUIRED
+>
+
+<!ELEMENT objects       ( floorplan | img | document)* >
+
+<!ELEMENT document (#PCDATA)>
+<!ATTLIST document
+    id      (1|2|3|4|5|6|7|8|9|10) #REQUIRED
+    modTime CDATA   #IMPLIED
+    url     CDATA   #IMPLIED
+    file    CDATA   #IMPLIED
+    title   CDATA   #IMPLIED
+    format  (pdf)   #FIXED "pdf"
+>
+
+<!-- 'images' has been replaced with 'objects'.  'images' is only provided here for backwards compatibility -->
+<!ELEMENT images        ( img* ) >
+
+<!ELEMENT img           ( #PCDATA ) >
+<!ATTLIST img             id      (m|a|b|c|d|e|f|g|h|i|j|k|l|n|o|p|q|r|s|t|u|v|w|x|y|z) #REQUIRED >
+<!ATTLIST img             modTime CDATA   #IMPLIED >
+<!ATTLIST img             url     CDATA   #IMPLIED >
+<!ATTLIST img             file    CDATA   #IMPLIED >
+<!ATTLIST img             format  (jpg)   #FIXED  "jpg" >
+
+<!ELEMENT floorplan     ( #PCDATA ) >
+<!ATTLIST floorplan       id      (1|2)   #REQUIRED >
+<!ATTLIST floorplan       modTime CDATA   #IMPLIED >
+<!ATTLIST floorplan       url     CDATA   #IMPLIED >
+<!ATTLIST floorplan       file    CDATA   #IMPLIED >
+<!ATTLIST floorplan       format  (gif)   #FIXED  "gif" >
+
+<!--
+    isMultiple indicates that there are multiple physical properties
+    for sale (or rent) under this one listing
+-->
+<!ELEMENT isMultiple EMPTY>
+<!ATTLIST isMultiple value %yes_no; "no" >
+
+<!-- 
+    These fields are only available for particular RCA subscribers - contact
+    REA for more information.
+-->
+<!ELEMENT marketing ( upgrade? )      >
+<!ELEMENT upgrade   ( presentation? ) >
+<!ELEMENT presentation EMPTY          >
+<!ATTLIST presentation
+    style    ( enhanced | premium | elite ) #REQUIRED
+    duration ( 30 | 90 | 180 | 365 )        #REQUIRED
+>

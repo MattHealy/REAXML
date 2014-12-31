@@ -1,0 +1,275 @@
+REAXML 15/03/07
+
+List of valid values for <category>
+
+    House
+    Unit
+    Townhouse
+    Villa
+    Apartment
+    Flat
+    Studio
+    Warehouse
+    Alpine
+    Retirement
+    BlockOfUnits
+    Other
+    DuplexSemi-detached
+    AcreageSemi-rural
+    Terrace
+    ServicedApartment
+
+List of valid values for <holidayCategory>
+    Alpine
+    Apartment
+    BackpackerHostel
+    BedAndBreakfast
+    Campground
+    CaravanHolidayPark
+    DuplexSemi-detached
+    ExecutiveRental
+    FarmStay
+    Flat
+    Hotel
+    House
+    HouseBoat
+    Lodge
+    Motel
+    Resort
+    Retreat
+    SelfContainedCottage
+    ServicedApartment
+    Studio
+    Terrace
+    Townhouse
+    Unit
+    Villa
+    Other
+
+List of valid values for <ruralCategory>
+
+    Cropping
+    Dairy
+    Farmlet
+    Horticulture
+    Livestock
+    Viticulture
+    MixedFarming
+    Lifestyle
+    Other
+
+List of valid values for <landCategory>
+
+    Residential
+    Commercial
+
+List of valid values for  <commercialCategory>
+
+    Commercial Farming
+    Land/Development
+    Hotel/Leisure
+    Industrial/Warehouse
+    Medical/Consulting
+    Offices
+    Retail
+    Showrooms/Bulky Goods
+
+
+List of valid values for <businessCategory> and <businessSubCategory> elements.
+SubCategory values appear indented under each Category value.
+
+    Accommodation/Tourism
+         Aged Care
+         Backpacker/Hostel
+         Boarding Kennels
+         Caravan Park
+         Function Centre
+         Guest House/B&B
+         Hotel
+         Management Rights
+         Motel
+         Resort
+         Retirement Village
+         Theme Park
+         Tours
+    Automotive
+         Accessories/Parts
+         Aeronautical
+         Auto Electrical
+         Bike and Motorcycle
+         Car Dealership
+         Car Rental
+         Car Wash
+         Detailing
+         Driving Schools
+         Marine
+         Mechanical Repair
+         Panel Beating
+         Service Station
+         Truck
+         Wreckers
+    Beauty/Health
+         Beauty Products
+         Beauty Salon
+         Dental
+         Hair
+         Hospital
+         Medical
+         Nails
+         Nursing Home
+         Massage
+         Health Spa
+         Medical Practice
+         Natural Therapies
+         Recreation/Sport
+    Education/Training
+         Child Care
+         Employment/Recruitment
+         Educational
+         Training
+    Food/Hospitality
+         Alcohol/Liquor
+         Bakery
+         Butcher
+         Cafe/Coffee Shop
+         Catering
+         Convenience Store
+         Deli
+         Distributors
+         Fruit/Veg
+         Juice Bar
+         Manufacturers
+         Restaurant
+         Retailer
+         Supermarket
+         Takeaway Food
+         Wholesalers
+    Franchise
+    Home/Garden
+         Home Based
+         Homewares/Hardware
+         Irrigation Services
+         Gardening
+         Nursery
+    Import/Export/Whole
+         Freight
+         Customs
+         Import
+         Export
+         Wholesale
+    Industrial/Manufacturing
+         Building and Construction
+         Civil
+         Clothing/Footwear
+         Electrical
+         Food/Beverage
+         Furniture/Timber
+         Glass/Ceramic
+         Machinery/Metal
+         Manufacturing/Engineering
+         Mining/Earth Moving
+         Oil/Gas
+         Paper/Printing
+         Plastic
+         Water
+         Welding
+    Leisure/Entertainment
+         Adult
+         Aircraft
+         Amusements
+         Aquatic/Marine
+         Arts/Crafts
+         Bars/Nightclubs
+         Function Centre
+         Gambling
+         Garden/Nurseries
+         Hotel
+         Music/Video
+         Recreation/Sport
+         Sports Complex/Gym
+         Vending
+    Professional
+         Accounting
+         Advertising/Mkting
+         Bookkeeping
+         Brokerage
+         Civil
+         Communications
+         Computer/IT
+         Finance
+         Insurance
+         Internet
+         Legal
+         Media
+         Medical
+         Property/Real Estate
+         Recruitment
+         Scientific
+         Security
+         Travel
+    Retail
+         Clothing/Accessories
+         Entertainment/Tech
+         Florist/Nursery
+         Food/Beverage
+         Health/Beauty
+         Homeware/Hardware
+         Newsagency/Tatts
+         Office Supplies
+         Animal related
+         Pharmacies
+         Post Offices
+         Vending
+    Rural
+         Aerial
+         Agricultural
+         Aquaculture
+         Crop Harvesting
+         Dairy Farming
+         Farming
+         Fertiliser
+         Fishing/Forestry
+         Fruit Picking
+         Hunting/Trap
+         Insemination
+         Irrigation Services
+         Land Clearing
+         Livestock
+         Machinery
+         Mustering
+         Shearing
+         Wool Classing
+    Services
+         Aircraft
+         Alarms
+         Animal related
+         Boats/Marine
+         Car/Bus/Truck
+         Cleaning
+         Communication
+         Copy/Laminate
+         Courier
+         Driving Schools
+         Entertainment
+         Garden/Household
+         Hire/Rent
+         Limousine/Taxi
+         Machinery
+         Management Rights
+         Medical
+         Mobile Services
+         Pest related
+         Pool/Water
+         Print/Photo
+         Repair
+    Transport/Distribution
+         Air
+         Bus
+         Car
+         Parking
+         Rail
+         Road
+         Sea
+         Taxi
+         Truck
+

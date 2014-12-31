@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE propertyList SYSTEM "http://reaxml.realestate.com.au/propertyList.dtd">
+<propertyList date="2009-01-01-12:30:00" username="xmluser" password="xmlpassword">
+	<!-- Current Listing -->
+	<holidayRental modTime="2009-01-01-12:30:00" status="current">
+		<agentID>XNWXNW</agentID>
+		<uniqueID>ABCD1234</uniqueID>
+		<listingAgent>
+			<name>Mr. John Doe</name>
+			<telephone type="BH">05 1234 5678</telephone>
+			<email>jdoe@somedomain.com.au</email>
+		</listingAgent>
+		<dateAvailable>2009-01-26-12:30:00</dateAvailable>
+		<rent period="week">1350</rent>
+		<address display="yes">
+			<streetNumber>39</streetNumber>
+			<street>Main Road</street>
+			<suburb display="yes">RICHMOND</suburb>
+			<state>vic</state>
+			<postcode>3121</postcode>
+			<country>AUS</country>
+		</address>
+		<municipality>Yarra</municipality>
+		<holidayCategory name="Lodge"/>
+		<headline>BEACHFRONT APARTMENT- FULLY FURNISHED</headline>
+		<description>A Place to Relax
+If its relaxation your after spend your days lazing in the sun or take leisurely strolls along the renowned beach and enjoy the beautiful sunsets.DAILY RATE $220 PER NIGHT</description>
+		<features>
+			<bedrooms>2</bedrooms>
+			<bathrooms>1</bathrooms>
+			<ensuite>1</ensuite>
+			<carports>1</carports>
+			<airConditioning>1</airConditioning>
+			<alarmSystem>1</alarmSystem>
+			<vacuumSystem>no</vacuumSystem>
+			<intercom>no</intercom>
+			<pool type="inground">yes</pool>
+			<spa type="inground">no</spa>
+			<tennisCourt>yes</tennisCourt>
+			<openFirePlace>1</openFirePlace>
+			<heating type="other"/>
+			<hotWaterService type="gas"/>
+			<otherFeatures>balcony, courtyard</otherFeatures>
+		</features>
+		<landDetails>
+			<area unit="square">60</area>
+			<frontage unit="meter">15</frontage>
+			<depth unit="meter" side="rear">40</depth>
+			<crossOver value="left"/>
+		</landDetails>
+		<buildingDetails>
+			<area unit="square">25</area>
+			<newlyBuilt value="yes"/>
+		</buildingDetails>
+		<inspectionTimes>
+			<inspection>21-Jan-2009 11:00am to 1:00pm</inspection>
+			<inspection>22-Jan-2009 11:00am to 1:00pm</inspection>
+		</inspectionTimes>
+		<externalLink href="http://www.realestate.com.au/"/>
+		<images>
+			<img id="m" modTime="2009-01-01-12:30:00" url="http://www.realestate.com.au/tmp/imageM.jpg" format="jpg"/>
+			<img id="a" modTime="2009-01-01-12:30:00" url="http://www.realestate.com.au/tmp/imageA.jpg" format="jpg"/>
+		</images>
+		<objects>
+			<floorplan id="1" modTime="2009-01-01-12:30:00" url="http://www.realestate.com.au/tmp/floorplan1.gif" format="gif"/>
+			<floorplan id="2" modTime="2009-01-01-12:30:00" url="http://www.realestate.com.au/tmp/floorplan2.gif" format="gif"/>
+		</objects>
+	</holidayRental>
+	<!-- Leased Listing -->
+	<holidayRental modTime="2009-01-01-12:30:00" status="leased">
+		<agentID>XNWXNW</agentID>
+		<uniqueID>ABCD12345</uniqueID>
+	</holidayRental>
+	<!-- Deleted Listing -->
+	<holidayRental modTime="2009-01-01-12:30:00" status="withdrawn">
+		<agentID>XNWXNW</agentID>
+		<uniqueID>ABCD123456</uniqueID>
+	</holidayRental>
+</propertyList>
